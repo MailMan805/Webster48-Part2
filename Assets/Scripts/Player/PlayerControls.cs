@@ -11,23 +11,40 @@ public class PlayerControls : MonoBehaviour
 
     private float rotationX = 0f; // To store current rotation on X axis for the camera
     private Transform playerBody; // Reference to player's body for rotation
+    private Rigidbody rb; // Reference to player's Rigidbody for physics-based movement
 
     void Start()
     {
         gameManager = GameManager.Instance;
+
         // Lock the cursor and make it invisible
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         // Get the reference to the player's body (to rotate the body on the Y axis)
         playerBody = transform;
+
+        // Get the Rigidbody component for physics-based movement
+        rb = GetComponent<Rigidbody>();
+        if (rb == null)
+        {
+            Debug.LogError("Player does not have a Rigidbody component.");
+            return;
+        }
+
+        // Ensure the Rigidbody is not kinematic, allowing physics-based interactions
+        rb.isKinematic = false;
+
+        // Set Rigidbody settings to help smooth movement
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
     }
 
     void Update()
     {
-        // Mouse Look - rotating the camera
         if (!gameManager.isPlayerHiding && !gameManager.isPlayerDistracted)
         {
+            // Mouse Look - rotating the camera
             float mouseX = Input.GetAxis("Mouse X") * lookSpeedX;
             float mouseY = Input.GetAxis("Mouse Y") * lookSpeedY;
 
@@ -43,8 +60,9 @@ public class PlayerControls : MonoBehaviour
 
             // Movement vector
             Vector3 move = transform.right * moveX + transform.forward * moveZ;
-            transform.Translate(move * moveSpeed * Time.deltaTime, Space.World); // Move the player
+
+            // Apply the movement using Rigidbody's MovePosition
+            rb.MovePosition(transform.position + move * moveSpeed * Time.deltaTime);
         }
-       
     }
 }
