@@ -14,7 +14,7 @@ public class Jester : MonoBehaviour
     public Transform player;
     private float phaseDuration;
 
-    private bool found = false;
+    public bool found = false;
     private bool isChasingPlayer = false; // If the Jester is chasing the player
 
     void Start()
@@ -41,6 +41,7 @@ public class Jester : MonoBehaviour
     {
         if (currentHidingSpot == null) // If Jester hasn't hidden yet
         {
+            found = false;
             FindHidingSpot();
         }
     }
@@ -137,6 +138,6 @@ public class Jester : MonoBehaviour
             StartChasingPlayer(player);
         }
 
-        found = false;
+        
     }
 }

@@ -16,6 +16,11 @@ public class FoodCart : MonoBehaviour
     public float playerTransitionSpeed = 1f; // Speed at which the player moves in/out of the cart
     public float hideCooldownTime = 5f; // Cooldown time before the player can hide again after being forced out
 
+    public bool north = true;
+    public bool east = false;
+    public bool south = false;
+    public bool west = false;
+
     public float waitTime = 2f;  // Example wait time (2 seconds)
     private bool playerInRange = false; // Whether the player is in range of the cart
     private bool isPlayerInCart = false; // To track if the player is currently in the cart
@@ -118,8 +123,23 @@ public class FoodCart : MonoBehaviour
     // Coroutine to open the doors
     private IEnumerator SlideDoorsOpen(bool forced)
     {
-        Vector3 doorOpenPosition = doorStartPosition + new Vector3(3f, 0f, 0f); // Change to desired sliding direction and distance
-
+        Vector3 doorOpenPosition = doorStartPosition;
+        if (west)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(3f, 0f, 0f);
+        }
+        if (east)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(-3f, 0f, 0f);
+        }
+        if (north)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(0f, 0f, -3f);
+        }
+        if (south)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(0f, 0f, 3f);
+        }
         float elapsedTime = 0f;
 
         // Slide door open over time
@@ -153,7 +173,23 @@ public class FoodCart : MonoBehaviour
     // Coroutine to close the doors
     private IEnumerator SlideDoorsClose()
     {
-        Vector3 doorOpenPosition = doorStartPosition + new Vector3(3f, 0f, 0f); // Change to desired sliding direction and distance
+        Vector3 doorOpenPosition = doorStartPosition;
+        if (west)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(3f, 0f, 0f);
+        }
+        if (east)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(-3f, 0f, 0f);
+        }
+        if (north)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(0f, 0f, -3f);
+        }
+        if (south)
+        {
+            doorOpenPosition = doorStartPosition + new Vector3(0f, 0f, 3f);
+        }
 
         float elapsedTime = 0f;
 

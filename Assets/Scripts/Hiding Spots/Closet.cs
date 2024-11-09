@@ -17,6 +17,12 @@ public class Closet : MonoBehaviour
     public float hideCooldownTime = 5f;
     public float waitTime = 2f;  // Example wait time (2 seconds)
 
+    public bool north = true;
+    public bool east = false;
+    public bool south = false;
+    public bool west = false;
+
+
     private bool playerInRange = false;
     private bool isPlayerInCloset = false;
     private bool isTransitioning = false;
@@ -109,8 +115,28 @@ public class Closet : MonoBehaviour
 
     private IEnumerator SlideDoorsOpen(bool forced)
     {
-        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
-        Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
+        Vector3 door1OpenPosition = LeftStartPosition;
+        Vector3 door2OpenPosition = RightStartPosition;
+        if (west)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
+        }
+        if (east)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(-1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(1f, 0f, 0f);
+        }
+        if (north)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, -1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, 1f);
+        }
+        if (south)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, 1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, -1f);
+        }
 
         float elapsedTime = 0f;
 
@@ -141,8 +167,28 @@ public class Closet : MonoBehaviour
 
     private IEnumerator SlideDoorsClose()
     {
-        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
-        Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
+        Vector3 door1OpenPosition = LeftStartPosition;
+        Vector3 door2OpenPosition = RightStartPosition;
+        if (west)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
+        }
+        if (east)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(-1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(1f, 0f, 0f);
+        }
+        if (north)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, -1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, 1f);
+        }
+        if (south)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, 1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, -1f);
+        }
 
         float elapsedTime = 0f;
 
