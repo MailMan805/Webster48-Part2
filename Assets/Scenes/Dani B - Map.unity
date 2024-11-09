@@ -5268,7 +5268,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (12)
@@ -5680,7 +5680,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (11)
@@ -6412,7 +6412,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (7)
@@ -8774,7 +8774,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (13)
@@ -9883,7 +9883,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (2)
@@ -9909,6 +9909,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
   m_PrefabInstance: {fileID: 250016110}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &250186694
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.4685926
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -31.044493
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092587007433324002, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404727556047834632, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
 --- !u!1 &251761617
 GameObject:
   m_ObjectHideFlags: 0
@@ -20203,7 +20264,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (5)
@@ -28689,7 +28750,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (10)
@@ -31062,7 +31123,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (19)
@@ -36216,7 +36277,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (3)
@@ -37972,7 +38033,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (1)
@@ -47139,7 +47200,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (4)
@@ -48050,7 +48111,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (17)
@@ -49541,11 +49602,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144764563}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1147166325 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-  m_PrefabInstance: {fileID: 1899810574}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1149628439
 GameObject:
   m_ObjectHideFlags: 0
@@ -54770,7 +54826,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (16)
@@ -56610,7 +56666,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (14)
@@ -58975,7 +59031,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (8)
@@ -61159,7 +61215,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (20)
@@ -62905,7 +62961,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (18)
@@ -76910,7 +76966,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (21)
@@ -77994,7 +78050,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger
@@ -79172,7 +79228,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (9)
@@ -83084,75 +83140,6 @@ Transform:
   - {fileID: 2069476259}
   m_Father: {fileID: 438679731}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1899810574
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 821721978847002102, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_TargetTexture
-      value: 
-      objectReference: {fileID: 8400000, guid: b6d92b790fd36914983cad603f69cee7, type: 2}
-    - target: {fileID: 3212706178381626629, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_Height
-      value: 2.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212706178381626629, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_Radius
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.4817352
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -13.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3576070976808992298, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8404727556047834632, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ecb9a6dd499ace74f9a33da396f74c43, type: 3}
 --- !u!1 &1908047342
 GameObject:
   m_ObjectHideFlags: 0
@@ -84643,7 +84630,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (15)
@@ -95437,7 +95424,7 @@ PrefabInstance:
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: playerPosition
       value: 
-      objectReference: {fileID: 1147166325}
+      objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_Name
       value: Storage Room Trigger (6)
@@ -95574,7 +95561,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1152143281}
   - {fileID: 1453664649}
-  - {fileID: 1899810574}
   - {fileID: 950930355}
   - {fileID: 1558152831}
   - {fileID: 590146041}
@@ -95582,3 +95568,4 @@ SceneRoots:
   - {fileID: 1894314501}
   - {fileID: 1000066182}
   - {fileID: 1168770175}
+  - {fileID: 250186694}
