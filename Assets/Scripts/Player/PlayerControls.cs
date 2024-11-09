@@ -66,11 +66,8 @@ public class PlayerControls : MonoBehaviour
             // Player movement (WASD or arrow keys)
             float moveX = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
             float moveZ = Input.GetAxis("Vertical");   // W/S or Up/Down arrows
-            float moveY = 0f;
 
-            // Check for Up/Down movement keys (e.g., Space for up, Left Shift for down)
-            if (Input.GetKey(KeyCode.Space)) moveY = 1f;
-            if (Input.GetKey(KeyCode.LeftShift)) moveY = -1f;
+            // Check for Up/Down movement keys (e.g., Space for up, Left Shift for down
 
             // Movement vector with all three axes
             Vector3 move = (transform.right * moveX + transform.forward * moveZ).normalized;
