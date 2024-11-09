@@ -108,18 +108,128 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SeekSprite_0
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 800
+        width: 814
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837a7084412677e4981266e19157e43b
+      internalID: 1628922184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekSprite_1
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 790
+        width: 814
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46550156952a9d409b9e281d763e37e
+      internalID: -141588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekSprite_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 493
+        width: 829
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 895d6bf9cd01b944d91c5b73c87826bc
+      internalID: 1860400633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekSprite_3
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 493
+        width: 813
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c40e5a969c77fa47a38af23918f8501
+      internalID: 260784294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SeekSprite_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 179
+        width: 801
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169a778b5e44fb847b28ada59fb0e820
+      internalID: -881289814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 92c4c00e0c9a4f4429e7be1bacaf23de
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SeekSprite_0: 1628922184
+      SeekSprite_1: -141588
+      SeekSprite_2: -1801075807
+      SeekSprite_3: 1860400633
+      SeekSprite_4: 260784294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
