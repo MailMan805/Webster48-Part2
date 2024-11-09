@@ -12,7 +12,9 @@ public class Jester : MonoBehaviour
     public float seekRadius = 50f; // Radius to find hiding spots
     private Transform currentHidingSpot;
     public Transform player;
+    private float phaseDuration;
 
+    private bool found = false;
     private bool isChasingPlayer = false; // If the Jester is chasing the player
 
     void Start()
@@ -23,13 +25,14 @@ public class Jester : MonoBehaviour
 
     void Update()
     {
+        phaseDuration = gameManager.phaseDuration;
+        if (gameManager.isSeekMode)
+        {
+            StartCoroutine(ChaseTimer());
+        }
         if (gameManager.isSeekMode && !isChasingPlayer)
         {
             SeekMode();
-        }
-        else if (gameManager.isNeutralMode || gameManager.isHideMode)
-        {
-            GoToFarAwayLocation();
         }
     }
 
@@ -89,6 +92,7 @@ public class Jester : MonoBehaviour
     {
         if (currentHidingSpot != null && Vector3.Distance(playerLocation.position, currentHidingSpot.position) < 5f)
         {
+            found = true;
             // Player found the Jester
             StartWaiting();
             
@@ -109,7 +113,10 @@ public class Jester : MonoBehaviour
         yield return new WaitForSeconds(timeToWait);
         gameManager.isSeekMode = false;
         gameManager.isNeutralMode = true;
-        GoToFarAwayLocation();
+        if(found)
+        {
+            GoToFarAwayLocation();
+        }
 
 
     }
@@ -119,5 +126,17 @@ public class Jester : MonoBehaviour
     {
         // Start the coroutine with the wait time you want
         StartCoroutine(WaitForTime(waitTime));
+    }
+
+    private IEnumerator ChaseTimer()
+    {
+        float chaseTime = phaseDuration;
+        yield return new WaitForSeconds(chaseTime);
+        if (!found)
+        {
+            StartChasingPlayer(player);
+        }
+
+        found = false;
     }
 }

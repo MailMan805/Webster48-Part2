@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public bool isHideMode = false;
     public bool isSeekMode = false;
     public bool isWon = false;
+    public bool timesUp = false;
+    public float phaseDuration;
 
     private void Awake()
     {
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
 
             // Phase 2: Choose Hide or Seek Mode - Random time between 15 and 25 seconds
             int phaseChoice = Random.Range(0, 2); // 0 = Hide, 1 = Seek
-            float phaseDuration = Random.Range(15f, 25f);
+            phaseDuration = Random.Range(15f, 25f);
 
             if (phaseChoice == 0)
             {
@@ -64,6 +66,8 @@ public class GameManager : MonoBehaviour
             }
 
             yield return new WaitForSeconds(phaseDuration);
+
+            
 
             // After Hide or Seek mode, return to Neutral mode
             isNeutralMode = true;

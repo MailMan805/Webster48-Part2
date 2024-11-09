@@ -44,13 +44,18 @@ public class Closet : MonoBehaviour
             }
             else if (isPlayerInCloset)
             {
-                ExitCloset();
+                ExitCloset(false);
             }
             else
             {
                 tempPlayerPosition.position = playerPosition.position;
                 EnterCloset();
             }
+        }
+
+        if (isPlayerInCloset && gameManager.isSeekMode)
+        {
+            ExitCloset(true);
         }
     }
 
@@ -82,27 +87,27 @@ public class Closet : MonoBehaviour
         isPlayerInCloset = true;
         isTransitioning = true;
         playerControls.enabled = false;
-        StartCoroutine(SlideDoorsOpen());
+        StartCoroutine(SlideDoorsOpen(false));
         gameManager.isPlayerHiding = true;
     }
 
-    private void ExitCloset()
+    private void ExitCloset(bool forced)
     {
         isPlayerInCloset = false;
         isTransitioning = true;
         playerControls.enabled = false;
-        StartCoroutine(SlideDoorsOpen());
+        StartCoroutine(SlideDoorsOpen(forced));
         gameManager.isPlayerHiding = false;
     }
 
     private void CheckCart()
     {
         print("Test test");
-        StartCoroutine(SlideDoorsOpen());
+        StartCoroutine(SlideDoorsOpen(false));
         jester.CheckHidingSpot(playerPosition);
     }
 
-    private IEnumerator SlideDoorsOpen()
+    private IEnumerator SlideDoorsOpen(bool forced)
     {
         Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
         Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
@@ -121,6 +126,10 @@ public class Closet : MonoBehaviour
         RightDoor.transform.position = door2OpenPosition;
 
         if (!gameManager.isSeekMode)
+        {
+            StartCoroutine(SmoothPlayerTransition());
+        }
+        else if (forced)
         {
             StartCoroutine(SmoothPlayerTransition());
         }
@@ -182,7 +191,7 @@ public class Closet : MonoBehaviour
     {
         if (isPlayerInCloset && !isCooldownActive)
         {
-            ExitCloset();
+            ExitCloset(true);
             StartCoroutine(ActivateCooldown());
         }
     }
