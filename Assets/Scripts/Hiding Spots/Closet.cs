@@ -14,13 +14,15 @@ public class Closet : MonoBehaviour
     public GameObject RightDoor; // Second door to slide open/close
     public float doorSlideSpeed = 2f; // Speed at which the doors slide open/close
     public float playerTransitionSpeed = 1f; // Speed at which the player moves in/out of the closet
+    public float hideCooldownTime = 5f; // Cooldown time before the player can hide again after being forced out
 
     private bool playerInRange = false; // Whether the player is in range of the closet
     private bool isPlayerInCloset = false; // To track if the player is currently in the closet
     private bool isTransitioning = false; // To prevent player action during transition
+    private bool isCooldownActive = false; // Whether the cooldown is active
+    private float cooldownTimer = 0f; // Timer for the cooldown
 
     public Transform tempPlayerPosition;
-
     private PlayerControls playerControls; // Reference to the PlayerControls script
 
     void Start()
@@ -35,8 +37,8 @@ public class Closet : MonoBehaviour
 
     void Update()
     {
-        // Check if the player is in range, not transitioning, and presses the 'E' key
-        if (playerInRange && !isTransitioning && Input.GetKeyDown(KeyCode.E))
+        // If player presses 'E' while in range and there's no cooldown, allow them to enter/exit the closet
+        if (playerInRange && !isTransitioning && !isCooldownActive && Input.GetKeyDown(KeyCode.E))
         {
             if (isPlayerInCloset) // If player is inside closet, exit
             {
@@ -48,6 +50,8 @@ public class Closet : MonoBehaviour
                 EnterCloset();
             }
         }
+
+        
     }
 
     // Trigger when the player enters the closet's collider
@@ -56,6 +60,11 @@ public class Closet : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+        }
+
+        if (other.CompareTag("Snooper") && isPlayerInCloset) // If Snooper enters while player is hiding
+        {
+            ForcePlayerOutOfHiding();
         }
     }
 
@@ -169,5 +178,31 @@ public class Closet : MonoBehaviour
         playerPosition.rotation = targetRotation;
 
         StartCoroutine(SlideDoorsClose());
+    }
+
+    // Force the player out of the closet when the Snooper enters
+    private void ForcePlayerOutOfHiding()
+    {
+        if (isPlayerInCloset && !isCooldownActive) // Only force out if player is in closet and no cooldown is active
+        {
+            ExitCloset(); // Force the player out of the closet
+            StartCoroutine(ActivateCooldown()); // Start the cooldown to prevent immediate re-hiding
+        }
+    }
+
+    // Start the cooldown before the player can hide again
+    private IEnumerator ActivateCooldown()
+    {
+        isCooldownActive = true;
+        cooldownTimer = hideCooldownTime; // Set cooldown time
+
+        // Wait for the cooldown to finish
+        while (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        isCooldownActive = false; // Cooldown finished, player can hide again
     }
 }

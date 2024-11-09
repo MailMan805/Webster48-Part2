@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Crowd
+  - Hiding Spot
+  - Snooper
   layers:
   - Default
   - TransparentFX

@@ -12,10 +12,13 @@ public class FoodCart : MonoBehaviour
     public GameObject door; // Door to slide open/close
     public float doorSlideSpeed = 2f; // Speed at which the door slides open/close
     public float playerTransitionSpeed = 1f; // Speed at which the player moves in/out of the cart
+    public float hideCooldownTime = 5f; // Cooldown time before the player can hide again after being forced out
 
     private bool playerInRange = false; // Whether the player is in range of the cart
     private bool isPlayerInCart = false; // To track if the player is currently in the cart
     private bool isTransitioning = false; // To prevent player action during transition
+    private bool isCooldownActive = false; // Whether the cooldown is active
+    private float cooldownTimer = 0f; // Timer for the cooldown
 
     public Transform tempPlayerPosition;
 
@@ -32,8 +35,8 @@ public class FoodCart : MonoBehaviour
 
     void Update()
     {
-        // Check if the player is in range, not transitioning, and presses the 'E' key
-        if (playerInRange && !isTransitioning && Input.GetKeyDown(KeyCode.E))
+        // If player presses 'E' while in range and there's no cooldown, allow them to enter/exit the cart
+        if (playerInRange && !isTransitioning && !isCooldownActive && Input.GetKeyDown(KeyCode.E))
         {
             if (isPlayerInCart) // If player is inside cart, exit
             {
@@ -45,6 +48,7 @@ public class FoodCart : MonoBehaviour
                 EnterCart();
             }
         }
+
     }
 
     // Trigger when the player enters the cart's collider
@@ -53,6 +57,11 @@ public class FoodCart : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+        }
+
+        if (other.CompareTag("Snooper") && isPlayerInCart) // If Snooper enters while player is hiding
+        {
+            ForcePlayerOutOfHiding();
         }
     }
 
@@ -160,5 +169,31 @@ public class FoodCart : MonoBehaviour
         playerPosition.rotation = targetRotation;
 
         StartCoroutine(SlideDoorsClose());
+    }
+
+    // Force the player out of the cart when the Snooper enters
+    private void ForcePlayerOutOfHiding()
+    {
+        if (isPlayerInCart && !isCooldownActive) // Only force out if player is in cart and no cooldown is active
+        {
+            ExitCart(); // Force the player out of the cart
+            StartCoroutine(ActivateCooldown()); // Start the cooldown to prevent immediate re-hiding
+        }
+    }
+
+    // Start the cooldown before the player can hide again
+    private IEnumerator ActivateCooldown()
+    {
+        isCooldownActive = true;
+        cooldownTimer = hideCooldownTime; // Set cooldown time
+
+        // Wait for the cooldown to finish
+        while (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        isCooldownActive = false; // Cooldown finished, player can hide again
     }
 }
