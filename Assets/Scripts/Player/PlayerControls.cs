@@ -38,6 +38,9 @@ public class PlayerControls : MonoBehaviour
         // Set Rigidbody settings to help smooth movement
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+        // Disable gravity to allow movement in all directions
+        rb.useGravity = false;
     }
 
     void Update()
@@ -53,16 +56,27 @@ public class PlayerControls : MonoBehaviour
 
             Camera.main.transform.localRotation = Quaternion.Euler(rotationX, 0f, 0f); // Apply X rotation to camera
             playerBody.Rotate(Vector3.up * mouseX); // Apply Y rotation to the player body
+        }
+    }
 
+    void FixedUpdate()
+    {
+        if (!gameManager.isPlayerHiding && !gameManager.isPlayerDistracted)
+        {
             // Player movement (WASD or arrow keys)
             float moveX = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
             float moveZ = Input.GetAxis("Vertical");   // W/S or Up/Down arrows
+            float moveY = 0f;
 
-            // Movement vector
-            Vector3 move = transform.right * moveX + transform.forward * moveZ;
+            // Check for Up/Down movement keys (e.g., Space for up, Left Shift for down)
+            if (Input.GetKey(KeyCode.Space)) moveY = 1f;
+            if (Input.GetKey(KeyCode.LeftShift)) moveY = -1f;
 
-            // Apply the movement using Rigidbody's MovePosition
-            rb.MovePosition(transform.position + move * moveSpeed * Time.deltaTime);
+            // Movement vector with all three axes
+            Vector3 move = (transform.right * moveX + transform.forward * moveZ).normalized;
+
+            // Apply the movement using Rigidbody's velocity to enable collision detection
+            rb.velocity = move * moveSpeed;
         }
     }
 }
