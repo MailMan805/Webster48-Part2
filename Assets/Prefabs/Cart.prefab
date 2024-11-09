@@ -2993,12 +2993,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3139383692410784962, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.409
+      objectReference: {fileID: 0}
     - target: {fileID: 4087860365661401205, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
       propertyPath: m_Name
       value: CartDoorFront
       objectReference: {fileID: 0}
+    - target: {fileID: 6614070930036823293, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.155
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8643098730596371335, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
@@ -3075,8 +3084,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CartDoorRear
       objectReference: {fileID: 0}
+    - target: {fileID: 6614070930036823293, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.154
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8643098730596371335, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
+    - {fileID: 2533666107291495494, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d6820bb57287a549bdc390473f1a21d, type: 3}
