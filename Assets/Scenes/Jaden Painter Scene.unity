@@ -849,6 +849,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407759233}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &485601068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 485601069}
+  m_Layer: 0
+  m_Name: Temp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &485601069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485601068}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.5874481, y: 0.7983433, z: 6.384763}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 909017497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491424699
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,13 +1328,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724995114}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.32699966, y: -0.19799995, z: -0.4239998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 909017497}
-  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804521893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,11 +1599,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ba064b2747b9642b4e8b5e30e7c1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  playerPosition: {fileID: 1716825159}
   closetPosition: {fileID: 1235462413}
   cameraRotation: {fileID: 724995115}
-  door1: {fileID: 1357277645}
-  door2: {fileID: 263942487}
-  doorSlideSpeed: 2
+  LeftDoor: {fileID: 263942487}
+  RightDoor: {fileID: 1357277645}
+  doorSlideSpeed: 5
+  tempPlayerPosition: {fileID: 485601069}
 --- !u!65 &909017496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1592,8 +1626,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.33, y: 3.36, z: -3.35}
-  m_Center: {x: -0.31, y: 0, z: -0.1}
+  m_Size: {x: 2.33, y: 3.36, z: 3.76}
+  m_Center: {x: -0.31, y: 0, z: 0.15}
 --- !u!4 &909017497
 Transform:
   m_ObjectHideFlags: 0
@@ -1616,6 +1650,7 @@ Transform:
   - {fileID: 1350609022}
   - {fileID: 1235462413}
   - {fileID: 724995115}
+  - {fileID: 485601069}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186163613
