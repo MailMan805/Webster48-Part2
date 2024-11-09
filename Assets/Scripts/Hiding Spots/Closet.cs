@@ -69,10 +69,10 @@ public class Closet : MonoBehaviour
     private void EnterCloset()
     {
         isPlayerInCloset = true;
-        SlideDoorsOpen();
+       // SlideDoorsOpen();
 
         // Move player to closet position
-        .position = closetPosition.position;
+       // .position = closetPosition.position;
 
         // Change the camera rotation
         
