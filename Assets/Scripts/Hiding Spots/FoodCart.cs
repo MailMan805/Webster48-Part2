@@ -5,6 +5,8 @@ public class FoodCart : MonoBehaviour
 {
     public GameManager gameManager;
 
+
+    public Jester jester; // Reference to the Jester script
     private Vector3 doorStartPosition;
     public Transform playerPosition;
     public Transform cartPosition; // The position where the player should be moved to inside the cart
@@ -14,6 +16,7 @@ public class FoodCart : MonoBehaviour
     public float playerTransitionSpeed = 1f; // Speed at which the player moves in/out of the cart
     public float hideCooldownTime = 5f; // Cooldown time before the player can hide again after being forced out
 
+    public float waitTime = 2f;  // Example wait time (2 seconds)
     private bool playerInRange = false; // Whether the player is in range of the cart
     private bool isPlayerInCart = false; // To track if the player is currently in the cart
     private bool isTransitioning = false; // To prevent player action during transition
@@ -27,6 +30,7 @@ public class FoodCart : MonoBehaviour
     void Start()
     {
         gameManager = GameManager.Instance;
+        jester = FindObjectOfType<Jester>();
         doorStartPosition = door.transform.position;
 
         // Get the PlayerControls component from the player object
@@ -35,12 +39,18 @@ public class FoodCart : MonoBehaviour
 
     void Update()
     {
+        
         // If player presses 'E' while in range and there's no cooldown, allow them to enter/exit the cart
         if (playerInRange && !isTransitioning && !isCooldownActive && Input.GetKeyDown(KeyCode.E))
         {
-            if (isPlayerInCart) // If player is inside cart, exit
+            
+            if (jester != null && jester.gameManager.isSeekMode)
             {
-                ExitCart();
+                CheckCart();
+            }
+            else if (isPlayerInCart) // If player is inside cart, exit
+            {
+                ExitCart(false);
             }
             else // If player is outside the cart, enter
             {
@@ -49,6 +59,10 @@ public class FoodCart : MonoBehaviour
             }
         }
 
+        if (isPlayerInCart && gameManager.isSeekMode)
+        {
+            ExitCart(true);
+        }
     }
 
     // Trigger when the player enters the cart's collider
@@ -80,22 +94,29 @@ public class FoodCart : MonoBehaviour
         isPlayerInCart = true;
         isTransitioning = true; // Start transition
         playerControls.enabled = false; // Disable player movement
-        StartCoroutine(SlideDoorsOpen());
+        StartCoroutine(SlideDoorsOpen(false));
         gameManager.isPlayerHiding = true;
     }
 
     // Method to teleport the player out of the cart and reset camera
-    private void ExitCart()
+    private void ExitCart(bool forced)
     {
         isPlayerInCart = false;
         isTransitioning = true; // Start transition
         playerControls.enabled = false; // Disable player movement
-        StartCoroutine(SlideDoorsOpen());
+        StartCoroutine(SlideDoorsOpen(forced));
         gameManager.isPlayerHiding = false;
     }
 
+    private void CheckCart()
+    {
+        StartCoroutine(SlideDoorsOpen(false));
+
+        jester.CheckHidingSpot(playerPosition);
+    }
+
     // Coroutine to open the doors
-    private IEnumerator SlideDoorsOpen()
+    private IEnumerator SlideDoorsOpen(bool forced)
     {
         Vector3 doorOpenPosition = doorStartPosition + new Vector3(3f, 0f, 0f); // Change to desired sliding direction and distance
 
@@ -114,7 +135,19 @@ public class FoodCart : MonoBehaviour
         door.transform.position = doorOpenPosition;
 
         // Smoothly transition the player into/out of the cart
-        StartCoroutine(SmoothPlayerTransition());
+        if(!gameManager.isSeekMode)
+        {
+            StartCoroutine(SmoothPlayerTransition());
+        }
+        else if (forced)
+        {
+            StartCoroutine(SmoothPlayerTransition());
+        }
+        else
+        {
+            StartWaiting();
+        }
+
     }
 
     // Coroutine to close the doors
@@ -176,7 +209,7 @@ public class FoodCart : MonoBehaviour
     {
         if (isPlayerInCart && !isCooldownActive) // Only force out if player is in cart and no cooldown is active
         {
-            ExitCart(); // Force the player out of the cart
+            ExitCart(true); // Force the player out of the cart
             StartCoroutine(ActivateCooldown()); // Start the cooldown to prevent immediate re-hiding
         }
     }
@@ -195,5 +228,18 @@ public class FoodCart : MonoBehaviour
         }
 
         isCooldownActive = false; // Cooldown finished, player can hide again
+    }
+    private IEnumerator WaitForTime(float timeToWait)
+    {
+        // Wait for the specified time
+        yield return new WaitForSeconds(timeToWait);
+        StartCoroutine(SlideDoorsClose());
+    }
+
+    // Example method to call the wait
+    public void StartWaiting()
+    {
+        // Start the coroutine with the wait time you want
+        StartCoroutine(WaitForTime(waitTime));
     }
 }
