@@ -9,6 +9,9 @@ public class MainMenu : MonoBehaviour
 {
     public Button playButton;
     public Button quitButton;
+    public Button acceptButton;
+
+    public GameObject splashScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -18,14 +21,25 @@ public class MainMenu : MonoBehaviour
 
         if (quitButton != null)
             quitButton.onClick.AddListener(OnQuitButtonClick);
+        
+        if (acceptButton != null)
+            acceptButton.onClick.AddListener(OnAcceptButtonClick);
+
+        splashScreen.SetActive(false);
     }
 
-private void OnPlayButtonClick()
+    private void OnPlayButtonClick()
     {
-        Debug.Log("Play Scene");
-        SceneManager.LoadScene("SampleScene");
+        Debug.Log("Splash Screen");
+        splashScreen.SetActive(true);
     }
 
+    private void OnAcceptButtonClick()
+    {     
+        SceneManager.LoadScene("SampleScene");
+        splashScreen.SetActive(false);
+        Debug.Log("Play the scene");
+    }
     private void OnQuitButtonClick()
     {
         Debug.Log("Quit Game");
