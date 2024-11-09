@@ -1501,9 +1501,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "You've been cordially invited to attend King Seek's Masquerade Ball.\nHe
-    is a tyrant and a monster.\nYou must get to the throne and slay him. \nHide from
-    the guards.\nSeek out the jester.\n\nWASD to move.\nE to interact. \n\nDo you
-    accept the invitation?\n\n\n"
+    is a tyrant and a monster.\nYou must get to the throne and slay him. \nDon't
+    get distracted.\nHide from the guard.\nSeek out the jester.\n\nWASD to move.\nE
+    to interact. \n\nDo you accept the invitation?\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b69a1a11a077504a93918c96a50cff5, type: 2}
   m_sharedMaterial: {fileID: 6758139234328576024, guid: 3b69a1a11a077504a93918c96a50cff5, type: 2}
