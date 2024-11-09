@@ -4,57 +4,61 @@ using UnityEngine;
 public class Closet : MonoBehaviour
 {
     public GameManager gameManager;
-
+    public Jester jester;
     private Vector3 LeftStartPosition;
     private Vector3 RightStartPosition;
     public Transform playerPosition;
-    public Transform closetPosition; // The position where the player should be moved to inside the closet
-    public Transform cameraRotation; // The desired rotation of the camera when the player enters the closet
-    public GameObject LeftDoor; // First door to slide open/close
-    public GameObject RightDoor; // Second door to slide open/close
-    public float doorSlideSpeed = 2f; // Speed at which the doors slide open/close
-    public float playerTransitionSpeed = 1f; // Speed at which the player moves in/out of the closet
-    public float hideCooldownTime = 5f; // Cooldown time before the player can hide again after being forced out
+    public Transform closetPosition;
+    public Transform cameraRotation;
+    public GameObject LeftDoor;
+    public GameObject RightDoor;
+    public float doorSlideSpeed = 2f;
+    public float playerTransitionSpeed = 1f;
+    public float hideCooldownTime = 5f;
+    public float waitTime = 2f;  // Example wait time (2 seconds)
 
-    private bool playerInRange = false; // Whether the player is in range of the closet
-    private bool isPlayerInCloset = false; // To track if the player is currently in the closet
-    private bool isTransitioning = false; // To prevent player action during transition
-    private bool isCooldownActive = false; // Whether the cooldown is active
-    private float cooldownTimer = 0f; // Timer for the cooldown
+    private bool playerInRange = false;
+    private bool isPlayerInCloset = false;
+    private bool isTransitioning = false;
+    private bool isCooldownActive = false;
+    private float cooldownTimer = 0f;
 
     public Transform tempPlayerPosition;
-    private PlayerControls playerControls; // Reference to the PlayerControls script
+    private PlayerControls playerControls;
 
     void Start()
     {
         gameManager = GameManager.Instance;
         LeftStartPosition = LeftDoor.transform.position;
         RightStartPosition = RightDoor.transform.position;
-
-        // Get the PlayerControls component from the player object
         playerControls = playerPosition.GetComponent<PlayerControls>();
     }
 
     void Update()
     {
-        // If player presses 'E' while in range and there's no cooldown, allow them to enter/exit the closet
         if (playerInRange && !isTransitioning && !isCooldownActive && Input.GetKeyDown(KeyCode.E))
         {
-            if (isPlayerInCloset) // If player is inside closet, exit
+            if (jester != null && gameManager.isSeekMode)
             {
-                ExitCloset();
+                CheckCart(); // Check only in Seek mode, no hiding
             }
-            else // If player is outside the closet, enter
+            else if (isPlayerInCloset)
+            {
+                ExitCloset(false);
+            }
+            else
             {
                 tempPlayerPosition.position = playerPosition.position;
                 EnterCloset();
             }
         }
 
-        
+        if (isPlayerInCloset && gameManager.isSeekMode)
+        {
+            ExitCloset(true);
+        }
     }
 
-    // Trigger when the player enters the closet's collider
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -62,13 +66,12 @@ public class Closet : MonoBehaviour
             playerInRange = true;
         }
 
-        if (other.CompareTag("Snooper") && isPlayerInCloset) // If Snooper enters while player is hiding
+        if (other.CompareTag("Snooper") && isPlayerInCloset)
         {
             ForcePlayerOutOfHiding();
         }
     }
 
-    // Trigger when the player exits the closet's collider
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -77,83 +80,90 @@ public class Closet : MonoBehaviour
         }
     }
 
-    // Method to teleport the player into the closet and rotate the camera
     private void EnterCloset()
     {
+        if (gameManager.isSeekMode) return;
+
         isPlayerInCloset = true;
-        isTransitioning = true; // Start transition
-        playerControls.enabled = false; // Disable player movement
-        StartCoroutine(SlideDoorsOpen());
+        isTransitioning = true;
+        playerControls.enabled = false;
+        StartCoroutine(SlideDoorsOpen(false));
         gameManager.isPlayerHiding = true;
     }
 
-    // Method to teleport the player out of the closet and reset camera
-    private void ExitCloset()
+    private void ExitCloset(bool forced)
     {
         isPlayerInCloset = false;
-        isTransitioning = true; // Start transition
-        playerControls.enabled = false; // Disable player movement
-        StartCoroutine(SlideDoorsOpen());
+        isTransitioning = true;
+        playerControls.enabled = false;
+        StartCoroutine(SlideDoorsOpen(forced));
         gameManager.isPlayerHiding = false;
     }
 
-    // Coroutine to open the doors
-    private IEnumerator SlideDoorsOpen()
+    private void CheckCart()
     {
-        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f); // Change to desired sliding direction and distance
-        Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);  // Adjust distance accordingly
+        print("Test test");
+        StartCoroutine(SlideDoorsOpen(false));
+        jester.CheckHidingSpot(playerPosition);
+    }
+
+    private IEnumerator SlideDoorsOpen(bool forced)
+    {
+        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
+        Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
 
         float elapsedTime = 0f;
 
-        // Slide doors open over time
         while (elapsedTime < doorSlideSpeed)
         {
             LeftDoor.transform.position = Vector3.Lerp(LeftStartPosition, door1OpenPosition, elapsedTime / doorSlideSpeed);
             RightDoor.transform.position = Vector3.Lerp(RightStartPosition, door2OpenPosition, elapsedTime / doorSlideSpeed);
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Ensure doors reach open position
         LeftDoor.transform.position = door1OpenPosition;
         RightDoor.transform.position = door2OpenPosition;
 
-        // Smoothly transition the player into/out of the closet
-        StartCoroutine(SmoothPlayerTransition());
+        if (!gameManager.isSeekMode)
+        {
+            StartCoroutine(SmoothPlayerTransition());
+        }
+        else if (forced)
+        {
+            StartCoroutine(SmoothPlayerTransition());
+        }
+        else
+        {
+            StartWaiting();
+        }
     }
 
-    // Coroutine to close the doors
     private IEnumerator SlideDoorsClose()
     {
-        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f); // Change to desired sliding direction and distance
-        Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);  // Adjust distance accordingly
+        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
+        Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
 
         float elapsedTime = 0f;
 
-        // Slide doors close over time
         while (elapsedTime < doorSlideSpeed)
         {
             LeftDoor.transform.position = Vector3.Lerp(door1OpenPosition, LeftStartPosition, elapsedTime / doorSlideSpeed);
             RightDoor.transform.position = Vector3.Lerp(door2OpenPosition, RightStartPosition, elapsedTime / doorSlideSpeed);
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Ensure doors reach closed position
         LeftDoor.transform.position = LeftStartPosition;
         RightDoor.transform.position = RightStartPosition;
 
-        // End transition and re-enable player movement if they are not in the closet
         isTransitioning = false;
         if (!isPlayerInCloset)
         {
-            playerControls.enabled = true; // Re-enable player movement after exit
+            playerControls.enabled = true;
         }
     }
 
-    // Coroutine to smoothly move and rotate the player
     private IEnumerator SmoothPlayerTransition()
     {
         Vector3 startPosition = playerPosition.position;
@@ -163,46 +173,54 @@ public class Closet : MonoBehaviour
 
         float elapsedTime = 0f;
 
-        // Smoothly move and rotate the player to the target position and rotation
         while (elapsedTime < playerTransitionSpeed)
         {
             playerPosition.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / playerTransitionSpeed);
             playerPosition.rotation = Quaternion.Lerp(startRotation, targetRotation, elapsedTime / playerTransitionSpeed);
-
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // Ensure final position and rotation are exactly as the target
         playerPosition.position = targetPosition;
         playerPosition.rotation = targetRotation;
 
         StartCoroutine(SlideDoorsClose());
     }
 
-    // Force the player out of the closet when the Snooper enters
     private void ForcePlayerOutOfHiding()
     {
-        if (isPlayerInCloset && !isCooldownActive) // Only force out if player is in closet and no cooldown is active
+        if (isPlayerInCloset && !isCooldownActive)
         {
-            ExitCloset(); // Force the player out of the closet
-            StartCoroutine(ActivateCooldown()); // Start the cooldown to prevent immediate re-hiding
+            ExitCloset(true);
+            StartCoroutine(ActivateCooldown());
         }
     }
 
-    // Start the cooldown before the player can hide again
     private IEnumerator ActivateCooldown()
     {
         isCooldownActive = true;
-        cooldownTimer = hideCooldownTime; // Set cooldown time
+        cooldownTimer = hideCooldownTime;
 
-        // Wait for the cooldown to finish
         while (cooldownTimer > 0f)
         {
             cooldownTimer -= Time.deltaTime;
             yield return null;
         }
 
-        isCooldownActive = false; // Cooldown finished, player can hide again
+        isCooldownActive = false;
+    }
+
+    private IEnumerator WaitForTime(float timeToWait)
+    {
+        // Wait for the specified time
+        yield return new WaitForSeconds(timeToWait);
+        StartCoroutine(SlideDoorsClose());
+    }
+
+    // Example method to call the wait
+    public void StartWaiting()
+    {
+        // Start the coroutine with the wait time you want
+        StartCoroutine(WaitForTime(waitTime));
     }
 }
