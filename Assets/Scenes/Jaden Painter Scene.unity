@@ -1605,7 +1605,7 @@ MonoBehaviour:
   cameraRotation: {fileID: 724995115}
   LeftDoor: {fileID: 263942487}
   RightDoor: {fileID: 1357277645}
-  doorSlideSpeed: 5
+  doorSlideSpeed: 0.5
   tempPlayerPosition: {fileID: 485601069}
 --- !u!65 &909017496
 BoxCollider:

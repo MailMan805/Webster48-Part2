@@ -33,13 +33,12 @@ public class Closet : MonoBehaviour
         {
             if (isPlayerInCloset) // If player is inside closet, exit
             {
-                playerPosition.position = tempPlayerPosition.position;
                 ExitCloset();
             }
             else // If player is outside the closet, enter
             {
                 tempPlayerPosition.position = playerPosition.position;
-                playerPosition.rotation = cameraRotation.rotation;
+                
                 EnterCloset();
             }
         }
@@ -71,9 +70,8 @@ public class Closet : MonoBehaviour
         isPlayerInCloset = true;
         StartCoroutine(SlideDoorsOpen());
 
-        playerPosition.position = closetPosition.position;
+        
         gameManager.isPlayerHiding = true;
-        StartCoroutine(SlideDoorsClose());
 
     }
 
@@ -84,15 +82,15 @@ public class Closet : MonoBehaviour
         gameManager.isPlayerHiding = false;
 
         StartCoroutine(SlideDoorsOpen());
-        StartCoroutine(SlideDoorsClose());
+
     }
 
     // Coroutine to open the doors
     private IEnumerator SlideDoorsOpen()
     {
 
-        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(-1f, 0f, 0f); // Change to desired sliding direction and distance
-        Vector3 door2OpenPosition = RightStartPosition + new Vector3(1f, 0f, 0f);  // Adjust distance accordingly
+        Vector3 door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f); // Change to desired sliding direction and distance
+        Vector3 door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);  // Adjust distance accordingly
 
         float elapsedTime = 0f;
 
@@ -104,7 +102,18 @@ public class Closet : MonoBehaviour
 
             elapsedTime += Time.deltaTime;
             yield return null;
+
         }
+        if(isPlayerInCloset)
+        {
+            playerPosition.position = closetPosition.position;
+            playerPosition.rotation = cameraRotation.rotation;
+        }
+        else
+        {
+            playerPosition.position = tempPlayerPosition.position;
+        }
+        StartCoroutine(SlideDoorsClose());
     }
 
     // Coroutine to close the doors
@@ -125,5 +134,6 @@ public class Closet : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
     }
 }
