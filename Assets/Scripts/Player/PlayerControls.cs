@@ -59,6 +59,27 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Player triggered collision with: " + other.gameObject.name); // Debug for any collision
+
+        if (other.CompareTag("Jester"))
+        {
+            gameManager.GameOver = true;
+            Debug.Log("Collided with Jester. Game Over.");
+        }
+        else if (other.CompareTag("Gaurd") && gameManager.isHideMode)
+        {
+            gameManager.GameOver = true;
+            Debug.Log("Collided with Guard in Hide Mode. Game Over.");
+        }
+        else if (other.CompareTag("King"))
+        {
+            gameManager.isWon = true;
+            Debug.Log("Collided with King. Player Wins.");
+        }
+    }
+
     void FixedUpdate()
     {
         if (!gameManager.isPlayerHiding && !gameManager.isPlayerDistracted)

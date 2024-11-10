@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class GameManager : MonoBehaviour
     public bool isWon = false;
     public bool timesUp = false;
     public float phaseDuration;
+    public bool GameOver = false;
+    public bool GameWon = false;
+    bool stop = false;
+
+    private bool Gameloop = true;
 
     public float timeToShowText = 3f;
     public GameObject Hide;
@@ -44,10 +50,26 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameLoop());
     }
 
+    private void Update()
+    {
+        
+        if (GameOver && !stop)
+        {
+            SceneManager.LoadScene("Tori GO Screen");
+            stop = true;
+        }
+        if (isWon && !stop)
+        {
+            SceneManager.LoadScene("Tori Win Screen");
+            stop = true;
+        }
+    }
+
     private IEnumerator GameLoop()
     {
-        while (true)
+        while (Gameloop)
         {
+
             // Phase 1: Neutral Mode
             float neutralWaitTime = Random.Range(10f, 15f);
             isNeutralMode = true;
@@ -84,6 +106,8 @@ public class GameManager : MonoBehaviour
             // Start the flickering animation in Hide or Seek Mode
             blinkingAnimation1?.StartFlickering();
             blinkingAnimation2?.StartFlickering();
+
+
             yield return new WaitForSeconds(phaseDuration);
 
             // Back to Neutral Mode
@@ -92,6 +116,9 @@ public class GameManager : MonoBehaviour
             isSeekMode = false;
             Debug.Log("Back to Neutral Mode");
         }
+    
+
+
     }
 
     private IEnumerator FlashText(GameObject Text)
