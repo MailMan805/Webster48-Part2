@@ -28,9 +28,9 @@ public class GameManager : MonoBehaviour
     private bool Gameloop = true;
 
     public float timeToShowText = 3f;
-    public GameObject Hide;
-    public GameObject Seek;
-
+    public GameObject Hide1;
+    public GameObject Seek1;
+    
     // Reference to the BlinkingAnimation script
     public BlinkingAnimation blinkingAnimation1;
     public BlinkingAnimation blinkingAnimation2;
@@ -51,7 +51,10 @@ public class GameManager : MonoBehaviour
     }
 
     void Start()
-    {
+    { 
+        
+        blinkingAnimation1 = Hide1.GetComponent<BlinkingAnimation>();
+        blinkingAnimation2 = Seek1.GetComponent<BlinkingAnimation>();
         audioManager = AudioManager.Instance;
         audioManager.PlayMusic("HideDanceGame01");
         Hide.gameObject.SetActive(false);
