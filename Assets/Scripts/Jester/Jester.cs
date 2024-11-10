@@ -102,7 +102,16 @@ public class Jester : MonoBehaviour
     void GoToFarAwayLocation()
     {
         if (currentHidingSpot != null) currentHidingSpot = null;
-        transform.position = farAwayLocation.position;
+        {
+            // Disable the NavMeshAgent to allow direct teleportation
+            agent.enabled = false;
+
+            // Teleport the jester to the selected hiding spot
+            transform.position = farAwayLocation.position;
+
+            // Re-enable the NavMeshAgent (optional)
+            agent.enabled = true;
+        }
     }
 
     // Call when player opens a hiding spot

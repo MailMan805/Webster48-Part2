@@ -129,7 +129,7 @@ MonoBehaviour:
   moveSpeed: 0.4
   danceSpeed: 4
   swayAmplitude: 0.5
-  playerDanceDuration: 10
+  playerDanceDuration: 5
   interactionCooldown: 10
   distractorText: {fileID: 0}
 --- !u!65 &2566078246778579423
