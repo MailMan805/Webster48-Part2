@@ -8,10 +8,13 @@ public class PlayerControls : MonoBehaviour
     public float moveSpeed = 5f;  // Movement speed
     public float lookSpeedX = 2f; // Mouse look sensitivity on X axis
     public float lookSpeedY = 2f; // Mouse look sensitivity on Y axis
+    public float timeToKill = 0;
 
     private float rotationX = 0f; // To store current rotation on X axis for the camera
     private Transform playerBody; // Reference to player's body for rotation
     private Rigidbody rb; // Reference to player's Rigidbody for physics-based movement
+
+    private bool kingSlayer = false;
 
     public AudioManager audioManager;
 
@@ -74,13 +77,14 @@ public class PlayerControls : MonoBehaviour
         }
         else if (other.CompareTag("King"))
         {
+            KingSlayer();
             gameManager.isWon = true;
         }
     }
 
     void FixedUpdate()
     {
-        if (!gameManager.isPlayerHiding && !gameManager.isPlayerDistracted)
+        if (!gameManager.isPlayerHiding && !gameManager.isPlayerDistracted && !kingSlayer)
         {
             // Player movement (WASD or arrow keys)
             float moveX = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
@@ -95,4 +99,19 @@ public class PlayerControls : MonoBehaviour
             rb.velocity = move * moveSpeed;
         }
     }
+
+    void KingSlayer()
+    {
+        kingSlayer = true;
+        StartCoroutine(KingSlayerAnim());
+    }
+
+    private IEnumerator KingSlayerAnim()
+    {
+        yield return new WaitForSeconds(timeToKill);
+
+
+    }
+
+
 }
