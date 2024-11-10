@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,44 +15,58 @@ public class GameManager : MonoBehaviour
     public bool timesUp = false;
     public float phaseDuration;
 
+    public float timeToShowText = 3f;
+    public GameObject Hide;
+    public GameObject Seek;
+
+    // Reference to the BlinkingAnimation script
+    public BlinkingAnimation blinkingAnimation1;
+    public BlinkingAnimation blinkingAnimation2;
+
     private void Awake()
     {
-        if (Instance == null) // If there is no instance already
+        if (Instance == null)
         {
-            DontDestroyOnLoad(gameObject); // Keep the GameObject, this component is attached to, across different scenes
+            DontDestroyOnLoad(gameObject);
             Instance = this;
         }
-        else if (Instance != this) // If there is already an instance and it's not `this` instance
+        else if (Instance != this)
         {
-            Destroy(gameObject); // Destroy the GameObject, this component is attached to
+            Destroy(gameObject);
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        // Start the game loop
+        Hide.gameObject.SetActive(false);
+        Seek.gameObject.SetActive(false);
+
         StartCoroutine(GameLoop());
     }
 
     private IEnumerator GameLoop()
     {
-        while (true) // Infinite loop to keep repeating phases
+        while (true)
         {
-            // Phase 1: Neutral Mode - Wait for a random time between 10 and 15 seconds
+            // Phase 1: Neutral Mode
             float neutralWaitTime = Random.Range(10f, 15f);
             isNeutralMode = true;
             isHideMode = false;
             isSeekMode = false;
             Debug.Log("Neutral Mode");
+
+            // Stop the flickering if active
+            blinkingAnimation1?.StopFlickering();
+            blinkingAnimation2?.StopFlickering();
             yield return new WaitForSeconds(neutralWaitTime);
 
-            // Phase 2: Choose Hide or Seek Mode - Random time between 15 and 25 seconds
-            int phaseChoice = Random.Range(0, 2); // 0 = Hide, 1 = Seek
+            // Phase 2: Choose Hide or Seek Mode
+            int phaseChoice = Random.Range(0, 2);
             phaseDuration = Random.Range(15f, 25f);
 
             if (phaseChoice == 0)
             {
+                StartCoroutine(FlashText(Hide));
                 isHideMode = true;
                 isNeutralMode = false;
                 isSeekMode = false;
@@ -59,21 +74,30 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                StartCoroutine(FlashText(Seek));
                 isSeekMode = true;
                 isNeutralMode = false;
                 isHideMode = false;
                 Debug.Log("Seek Mode");
             }
 
+            // Start the flickering animation in Hide or Seek Mode
+            blinkingAnimation1?.StartFlickering();
+            blinkingAnimation2?.StartFlickering();
             yield return new WaitForSeconds(phaseDuration);
 
-            
-
-            // After Hide or Seek mode, return to Neutral mode
+            // Back to Neutral Mode
             isNeutralMode = true;
             isHideMode = false;
             isSeekMode = false;
             Debug.Log("Back to Neutral Mode");
         }
+    }
+
+    private IEnumerator FlashText(GameObject Text)
+    {
+        Text.gameObject.SetActive(true);
+        yield return new WaitForSeconds(timeToShowText);
+        Text.gameObject.SetActive(false);
     }
 }
