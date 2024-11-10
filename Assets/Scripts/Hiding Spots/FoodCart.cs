@@ -32,8 +32,11 @@ public class FoodCart : MonoBehaviour
 
     private PlayerControls playerControls; // Reference to the PlayerControls script
 
+    public AudioManager audioManager;
+
     void Start()
     {
+        audioManager = AudioManager.Instance;
         gameManager = GameManager.Instance;
         jester = FindObjectOfType<Jester>();
         doorStartPosition = door.transform.position;

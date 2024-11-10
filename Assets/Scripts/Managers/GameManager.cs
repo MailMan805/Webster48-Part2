@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
     public bool GameOverGuard = false;
     public bool GameWon = false;
     bool stop = false;
-
     public bool isJesterChasing = false;
 
     private bool Gameloop = true;
@@ -32,6 +31,8 @@ public class GameManager : MonoBehaviour
     // Reference to the BlinkingAnimation script
     public BlinkingAnimation blinkingAnimation1;
     public BlinkingAnimation blinkingAnimation2;
+
+    public AudioManager audioManager;
 
     private void Awake()
     {
@@ -48,6 +49,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        audioManager = AudioManager.Instance;
+        audioManager.PlayMusic("HideDanceGame01");
         Hide.gameObject.SetActive(false);
         Seek.gameObject.SetActive(false);
 
@@ -127,6 +130,8 @@ public class GameManager : MonoBehaviour
 
             if (phaseChoice == 0)
             {
+                audioManager.StopMusic();
+                audioManager.PlayMusic("HideDanceGame02");
                 StartCoroutine(FlashText(Hide));
                 isHideMode = true;
                 isNeutralMode = false;
@@ -135,6 +140,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                audioManager.StopMusic();
+                audioManager.PlayMusic("HideDanceGame02");
                 StartCoroutine(FlashText(Seek));
                 isSeekMode = true;
                 isNeutralMode = false;
@@ -153,6 +160,8 @@ public class GameManager : MonoBehaviour
             isNeutralMode = true;
             isHideMode = false;
             isSeekMode = false;
+            audioManager.StopMusic();
+            audioManager.PlayMusic("HideDanceGame01");
             Debug.Log("Back to Neutral Mode");
         }
     
