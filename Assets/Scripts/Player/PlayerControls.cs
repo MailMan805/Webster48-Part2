@@ -28,7 +28,6 @@ public class PlayerControls : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         if (rb == null)
         {
-            Debug.LogError("Player does not have a Rigidbody component.");
             return;
         }
 
@@ -61,22 +60,18 @@ public class PlayerControls : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Player triggered collision with: " + other.gameObject.name); // Debug for any collision
 
-        if (other.CompareTag("Jester"))
+        if (other.CompareTag("Jester") && gameManager.isJesterChasing)
         {
-            gameManager.GameOver = true;
-            Debug.Log("Collided with Jester. Game Over.");
+            gameManager.GameOverJester = true;
         }
-        else if (other.CompareTag("Gaurd") && gameManager.isHideMode)
+        else if (other.CompareTag("Gaurd") && gameManager.isHideMode && !gameManager.isPlayerHiding)
         {
-            gameManager.GameOver = true;
-            Debug.Log("Collided with Guard in Hide Mode. Game Over.");
+            gameManager.GameOverGuard = true;
         }
         else if (other.CompareTag("King"))
         {
             gameManager.isWon = true;
-            Debug.Log("Collided with King. Player Wins.");
         }
     }
 
