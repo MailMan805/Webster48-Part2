@@ -1046,6 +1046,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2418863541478850143}
     - target: {fileID: 3527455713376158960, guid: c6561c66cbf20e146ac1266531f4b837, type: 3}
+      propertyPath: lonerText
+      value: 
+      objectReference: {fileID: 3934777705655312933}
+    - target: {fileID: 3527455713376158960, guid: c6561c66cbf20e146ac1266531f4b837, type: 3}
+      propertyPath: distractorText
+      value: 
+      objectReference: {fileID: 7684798570562147650}
+    - target: {fileID: 3527455713376158960, guid: c6561c66cbf20e146ac1266531f4b837, type: 3}
       propertyPath: hideGuardMaskIcon
       value: 
       objectReference: {fileID: 7340633334149301911, guid: 6bfc1a2c854e7c24f99ccc84758aad21, type: 3}
