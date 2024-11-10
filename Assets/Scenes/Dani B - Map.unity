@@ -5452,6 +5452,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hiding Spot
       objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.3
+      objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9659259
@@ -8352,6 +8360,14 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_TagString
       value: Hiding Spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.25
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27359,6 +27375,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hiding Spot
       objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.83
+      objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9659259
@@ -36420,6 +36444,14 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_TagString
       value: Hiding Spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.63
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48231,6 +48263,14 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_TagString
       value: Hiding Spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 22.24
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69405,6 +69445,14 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_TagString
       value: Hiding Spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.92
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -93977,6 +94025,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hiding Spot
       objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.06
+      objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9659259
@@ -99143,6 +99199,14 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_TagString
       value: Hiding Spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.67
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -120620,6 +120684,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hiding Spot
       objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.38
+      objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9659259
@@ -128709,6 +128781,14 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_TagString
       value: Hiding Spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3909638544043197346, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.87
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
