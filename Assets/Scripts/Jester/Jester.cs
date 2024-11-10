@@ -17,12 +17,17 @@ public class Jester : MonoBehaviour
     public GameObject TimesUp;
     public float timeToShowText = 3f;
 
+    public Animator jesterAnim;
+
     public bool found = false;
     private bool isChasingPlayer = false; // If the Jester is chasing the player
 
     public BlinkingAnimation blinkingAnimation1;
+
+    public AudioManager audioManager;
     void Start()
     {
+        audioManager = AudioManager.Instance;
         TimesUp.SetActive(false);
         gameManager = GameManager.Instance;
         agent = GetComponent<NavMeshAgent>();
@@ -100,6 +105,7 @@ public class Jester : MonoBehaviour
         if (currentHidingSpot != null && Vector3.Distance(playerLocation.position, currentHidingSpot.position) < 5f)
         {
             found = true;
+            
             // Player found the Jester
             StartWaiting();
             
@@ -117,6 +123,9 @@ public class Jester : MonoBehaviour
     private IEnumerator WaitForTime(float timeToWait)
     {
         // Wait for the specified time
+        audioManager.PlaySFX("JesterFoundFinal_mixdown");
+        audioManager.StopMusic();
+        audioManager.PlayMusic("HideDanceGame01");
         yield return new WaitForSeconds(timeToWait);
         gameManager.isSeekMode = false;
         gameManager.isNeutralMode = true;
@@ -143,6 +152,10 @@ public class Jester : MonoBehaviour
         {
             StartCoroutine(FlashText(TimesUp));
             StartChasingPlayer(player);
+            audioManager.StopMusic();
+            audioManager.musicVolume = 1.0f;
+            audioManager.PlayMusic("CreepingAmbienceBG");
+            jesterAnim.SetBool("IsChasing", true);
             gameManager.isJesterChasing = true;
         }
         

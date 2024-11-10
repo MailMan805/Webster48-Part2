@@ -32,8 +32,12 @@ public class Closet : MonoBehaviour
     public Transform tempPlayerPosition;
     private PlayerControls playerControls;
 
+    public AudioManager audioManager;
+
     void Start()
     {
+        playerPosition = FindAnyObjectByType<PlayerControls>().transform;
+        audioManager = AudioManager.Instance;
         gameManager = GameManager.Instance;
         LeftStartPosition = LeftDoor.transform.position;
         RightStartPosition = RightDoor.transform.position;

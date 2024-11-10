@@ -16,8 +16,11 @@ public class Guard : MonoBehaviour
     private float normalSpeed;
     private float wanderTimer;
 
+    public AudioManager audioManager;
+
     private void Start()
     {
+        audioManager = AudioManager.Instance;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         gameManager = GameObject.FindObjectOfType<GameManager>();

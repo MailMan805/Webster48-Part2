@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    private float elapsedTime = 0f;
+    public Text timerText;
+
 
     public bool isPlayerHiding = false;
     public bool isPlayerDistracted = false;
@@ -20,7 +23,6 @@ public class GameManager : MonoBehaviour
     public bool GameOverGuard = false;
     public bool GameWon = false;
     bool stop = false;
-
     public bool isJesterChasing = false;
 
     private bool Gameloop = true;
@@ -32,6 +34,8 @@ public class GameManager : MonoBehaviour
     // Reference to the BlinkingAnimation script
     public BlinkingAnimation blinkingAnimation1;
     public BlinkingAnimation blinkingAnimation2;
+
+    public AudioManager audioManager;
 
     private void Awake()
     {
@@ -48,15 +52,29 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        audioManager = AudioManager.Instance;
+        audioManager.PlayMusic("HideDanceGame01");
         Hide.gameObject.SetActive(false);
         Seek.gameObject.SetActive(false);
 
         StartCoroutine(GameLoop());
+
+        elapsedTime = 0f;
     }
 
     private void Update()
     {
         
+        if(Gameloop)
+        {
+            elapsedTime += Time.deltaTime;
+
+            if (timerText != null)
+            {
+                timerText.text = FormatTime(elapsedTime);
+            }
+        }
+
         if (GameOverJester && !stop && isJesterChasing)
         {
             SceneManager.LoadScene("Tori GO Screen");
@@ -87,7 +105,8 @@ public class GameManager : MonoBehaviour
     {
         while (Gameloop)
         {
-
+            int hidecounter = 0;
+            int seekcounter = 0;
             // Phase 1: Neutral Mode
             float neutralWaitTime = Random.Range(10f, 15f);
             isNeutralMode = true;
@@ -102,10 +121,33 @@ public class GameManager : MonoBehaviour
 
             // Phase 2: Choose Hide or Seek Mode
             int phaseChoice = Random.Range(0, 2);
+            if(phaseChoice == 0)
+            {
+               
+                if(hidecounter >= 2)
+                {
+                    phaseChoice = 1;
+                    hidecounter = 0;
+                }
+                hidecounter += 1;
+            }
+            else
+            {
+
+                if (seekcounter >= 2)
+                {
+                    phaseChoice = 0;
+                    hidecounter = 0;
+                }
+                seekcounter += 1;
+            }
             phaseDuration = Random.Range(15f, 25f);
 
             if (phaseChoice == 0)
             {
+                audioManager.StopMusic();
+                audioManager.PlaySFX("RecordScratch");
+                audioManager.PlayMusic("HideDanceGame02");
                 StartCoroutine(FlashText(Hide));
                 isHideMode = true;
                 isNeutralMode = false;
@@ -114,6 +156,9 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                audioManager.StopMusic();
+                audioManager.PlaySFX("RecordScratch");
+                audioManager.PlayMusic("HideDanceGame02");
                 StartCoroutine(FlashText(Seek));
                 isSeekMode = true;
                 isNeutralMode = false;
@@ -132,6 +177,8 @@ public class GameManager : MonoBehaviour
             isNeutralMode = true;
             isHideMode = false;
             isSeekMode = false;
+            audioManager.StopMusic();
+            audioManager.PlayMusic("HideDanceGame01");
             Debug.Log("Back to Neutral Mode");
         }
     
@@ -145,4 +192,17 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(timeToShowText);
         Text.gameObject.SetActive(false);
     }
+
+    private string FormatTime(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public float GetElapsedTime()
+    {
+        return elapsedTime;
+    }
+
 }
