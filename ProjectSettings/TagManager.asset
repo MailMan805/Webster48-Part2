@@ -8,6 +8,9 @@ TagManager:
   - Hiding Spot
   - Snooper
   - Jester Hiding Spot
+  - Jester
+  - Gaurd
+  - King
   layers:
   - Default
   - TransparentFX

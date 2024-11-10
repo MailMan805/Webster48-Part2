@@ -14,17 +14,23 @@ public class Jester : MonoBehaviour
     public Transform player;
     private float phaseDuration;
 
+    public GameObject TimesUp;
+    public float timeToShowText = 3f;
+
     public bool found = false;
     private bool isChasingPlayer = false; // If the Jester is chasing the player
 
+    public BlinkingAnimation blinkingAnimation1;
     void Start()
     {
+        TimesUp.SetActive(false);
         gameManager = GameManager.Instance;
         agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
+        blinkingAnimation1?.StopFlickering();
         phaseDuration = gameManager.phaseDuration;
         if (gameManager.isSeekMode)
         {
@@ -135,9 +141,17 @@ public class Jester : MonoBehaviour
         yield return new WaitForSeconds(chaseTime);
         if (!found)
         {
+            StartCoroutine(FlashText(TimesUp));
             StartChasingPlayer(player);
         }
-
         
+    }
+
+    private IEnumerator FlashText(GameObject Text)
+    {
+        Text.SetActive(true);
+        blinkingAnimation1?.StartFlickering();
+        yield return new WaitForSeconds(timeToShowText);
+        Text.SetActive(false);
     }
 }
