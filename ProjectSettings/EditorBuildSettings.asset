@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 6320dc985b9f1ba4482869633d8540bb
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Dani B - Map.unity
+    guid: 87ccaf0bc5b205e4482b4fa92a455307
+  - enabled: 1
+    path: Assets/Scenes/Tori GO Screen.unity
+    guid: ff10ebc3fdf2bd04c8237540603f3fdb
+  - enabled: 1
+    path: Assets/Scenes/Tori Win Screen.unity
+    guid: 60d6348bef59fb44cbddd38e932cba1e
   m_configObjects: {}

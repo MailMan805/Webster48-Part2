@@ -4,59 +4,80 @@ using UnityEngine;
 public class Closet : MonoBehaviour
 {
     public GameManager gameManager;
+    public Jester jester;
+    private Vector3 LeftStartPosition;
+    private Vector3 RightStartPosition;
+    public Transform playerPosition;
+    public Transform closetPosition;
+    public Transform cameraRotation;
+    public GameObject LeftDoor;
+    public GameObject RightDoor;
+    public float doorSlideSpeed = 2f;
+    public float playerTransitionSpeed = 1f;
+    public float hideCooldownTime = 5f;
+    public float waitTime = 2f;  // Example wait time (2 seconds)
 
-    private Transform playerPosition = FindAnyObjectByType<PlayerControls>().gameObject.GetComponentInParent<Transform>();
-    public Transform closetPosition; // The position where the player should be moved to inside the closet
-    public Transform cameraRotation; // The desired rotation of the camera when the player enters the closet
-    public GameObject door1; // First door to slide open/close
-    public GameObject door2; // Second door to slide open/close
-    public float doorSlideSpeed = 2f; // Speed at which the doors slide open/close
+    public bool north = true;
+    public bool east = false;
+    public bool south = false;
+    public bool west = false;
 
-    private bool playerInRange = false; // Whether the player is in range of the closet
-    private bool isPlayerInCloset = false; // To track if the player is currently in the closet
-    private bool doorsOpen = false; // To track if the doors are open or closed
 
-    private Vector3 originalPlayerPosition; // To store the player's original position outside the closet
-    private Quaternion originalCameraRotation; // To store the original camera rotation
+    private bool playerInRange = false;
+    private bool isPlayerInCloset = false;
+    private bool isTransitioning = false;
+    private bool isCooldownActive = false;
+    private float cooldownTimer = 0f;
+
+    public Transform tempPlayerPosition;
+    private PlayerControls playerControls;
 
     void Start()
     {
         gameManager = GameManager.Instance;
-        // Save the player's original position and camera rotation
-        originalPlayerPosition = Camera.main.transform.parent.position;
-        originalCameraRotation = Camera.main.transform.rotation;
-
-        // Ensure the doors start in a closed position
-        door1.transform.position = door1.transform.position; // Or set to a start position if necessary
-        door2.transform.position = door2.transform.position;
+        LeftStartPosition = LeftDoor.transform.position;
+        RightStartPosition = RightDoor.transform.position;
+        playerControls = playerPosition.GetComponent<PlayerControls>();
     }
 
     void Update()
     {
-        // Check if the player is in range and presses the 'E' key
-        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        if (playerInRange && !isTransitioning && !isCooldownActive && Input.GetKeyDown(KeyCode.E))
         {
-            if (isPlayerInCloset) // If player is inside closet, exit
+            if (jester != null && gameManager.isSeekMode)
             {
-                ExitCloset();
+                CheckCart(); // Check only in Seek mode, no hiding
             }
-            else // If player is outside the closet, enter
+            else if (isPlayerInCloset)
             {
+                ExitCloset(false);
+            }
+            else
+            {
+                tempPlayerPosition.position = playerPosition.position;
                 EnterCloset();
             }
         }
+
+        if (isPlayerInCloset && gameManager.isSeekMode)
+        {
+            ExitCloset(true);
+        }
     }
 
-    // Trigger when the player enters the closet's collider
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
         }
+
+        if (other.CompareTag("Snooper") && isPlayerInCloset)
+        {
+            ForcePlayerOutOfHiding();
+        }
     }
 
-    // Trigger when the player exits the closet's collider
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -65,80 +86,187 @@ public class Closet : MonoBehaviour
         }
     }
 
-    // Method to teleport the player into the closet and rotate the camera
     private void EnterCloset()
     {
+        if (gameManager.isSeekMode) return;
+
         isPlayerInCloset = true;
-       // SlideDoorsOpen();
-
-        // Move player to closet position
-       // .position = closetPosition.position;
-
-        // Change the camera rotation
-        
+        isTransitioning = true;
+        playerControls.enabled = false;
+        StartCoroutine(SlideDoorsOpen(false));
+        gameManager.isPlayerHiding = true;
     }
 
-    // Method to teleport the player out of the closet and reset camera
-    private void ExitCloset()
+    private void ExitCloset(bool forced)
     {
         isPlayerInCloset = false;
-        doorsOpen = false; // Close doors when exiting the closet
-
-        // Return player to their original position
-        Transform playerTransform = Camera.main.transform.parent;
-        playerTransform.position = originalPlayerPosition;
-
-        // Reset camera rotation
-        Camera.main.transform.rotation = originalCameraRotation;
+        isTransitioning = true;
+        playerControls.enabled = false;
+        StartCoroutine(SlideDoorsOpen(forced));
+        gameManager.isPlayerHiding = false;
     }
 
-    // Coroutine to open the doors
-    private IEnumerator SlideDoorsOpen()
+    private void CheckCart()
     {
-        Vector3 door1StartPosition = door1.transform.position;
-        Vector3 door2StartPosition = door2.transform.position;
+        print("Test test");
+        StartCoroutine(SlideDoorsOpen(false));
+        jester.CheckHidingSpot(playerPosition);
+    }
 
-        Vector3 door1OpenPosition = door1StartPosition + new Vector3(-3f, 0f, 0f); // Change to desired sliding direction and distance
-        Vector3 door2OpenPosition = door2StartPosition + new Vector3(3f, 0f, 0f);  // Adjust distance accordingly
+    private IEnumerator SlideDoorsOpen(bool forced)
+    {
+        Vector3 door1OpenPosition = LeftStartPosition;
+        Vector3 door2OpenPosition = RightStartPosition;
+        if (west)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
+        }
+        if (east)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(-1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(1f, 0f, 0f);
+        }
+        if (north)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, -1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, 1f);
+        }
+        if (south)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, 1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, -1f);
+        }
 
         float elapsedTime = 0f;
 
-        // Slide doors open over time
         while (elapsedTime < doorSlideSpeed)
         {
-            door1.transform.position = Vector3.Lerp(door1StartPosition, door1OpenPosition, elapsedTime / doorSlideSpeed);
-            door2.transform.position = Vector3.Lerp(door2StartPosition, door2OpenPosition, elapsedTime / doorSlideSpeed);
-
+            LeftDoor.transform.position = Vector3.Lerp(LeftStartPosition, door1OpenPosition, elapsedTime / doorSlideSpeed);
+            RightDoor.transform.position = Vector3.Lerp(RightStartPosition, door2OpenPosition, elapsedTime / doorSlideSpeed);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        door1.transform.position = door1OpenPosition;
-        door2.transform.position = door2OpenPosition;
+        LeftDoor.transform.position = door1OpenPosition;
+        RightDoor.transform.position = door2OpenPosition;
+
+        if (!gameManager.isSeekMode)
+        {
+            StartCoroutine(SmoothPlayerTransition());
+        }
+        else if (forced)
+        {
+            StartCoroutine(SmoothPlayerTransition());
+        }
+        else
+        {
+            StartWaiting();
+        }
     }
 
-    // Coroutine to close the doors
     private IEnumerator SlideDoorsClose()
     {
-        Vector3 door1StartPosition = door1.transform.position;
-        Vector3 door2StartPosition = door2.transform.position;
-
-        Vector3 door1ClosePosition = door1StartPosition - new Vector3(-3f, 0f, 0f); // Return doors to initial closed position
-        Vector3 door2ClosePosition = door2StartPosition - new Vector3(3f, 0f, 0f);
+        Vector3 door1OpenPosition = LeftStartPosition;
+        Vector3 door2OpenPosition = RightStartPosition;
+        if (west)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(-1f, 0f, 0f);
+        }
+        if (east)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(-1f, 0f, 0f);
+            door2OpenPosition = RightStartPosition + new Vector3(1f, 0f, 0f);
+        }
+        if (north)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, -1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, 1f);
+        }
+        if (south)
+        {
+            door1OpenPosition = LeftStartPosition + new Vector3(0f, 0f, 1f);
+            door2OpenPosition = RightStartPosition + new Vector3(0f, 0f, -1f);
+        }
 
         float elapsedTime = 0f;
 
-        // Slide doors close over time
         while (elapsedTime < doorSlideSpeed)
         {
-            door1.transform.position = Vector3.Lerp(door1StartPosition, door1ClosePosition, elapsedTime / doorSlideSpeed);
-            door2.transform.position = Vector3.Lerp(door2StartPosition, door2ClosePosition, elapsedTime / doorSlideSpeed);
-
+            LeftDoor.transform.position = Vector3.Lerp(door1OpenPosition, LeftStartPosition, elapsedTime / doorSlideSpeed);
+            RightDoor.transform.position = Vector3.Lerp(door2OpenPosition, RightStartPosition, elapsedTime / doorSlideSpeed);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        door1.transform.position = door1ClosePosition;
-        door2.transform.position = door2ClosePosition;
+        LeftDoor.transform.position = LeftStartPosition;
+        RightDoor.transform.position = RightStartPosition;
+
+        isTransitioning = false;
+        if (!isPlayerInCloset)
+        {
+            playerControls.enabled = true;
+        }
+    }
+
+    private IEnumerator SmoothPlayerTransition()
+    {
+        Vector3 startPosition = playerPosition.position;
+        Quaternion startRotation = playerPosition.rotation;
+        Vector3 targetPosition = isPlayerInCloset ? closetPosition.position : tempPlayerPosition.position;
+        Quaternion targetRotation = isPlayerInCloset ? cameraRotation.rotation : tempPlayerPosition.rotation;
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < playerTransitionSpeed)
+        {
+            playerPosition.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / playerTransitionSpeed);
+            playerPosition.rotation = Quaternion.Lerp(startRotation, targetRotation, elapsedTime / playerTransitionSpeed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        playerPosition.position = targetPosition;
+        playerPosition.rotation = targetRotation;
+
+        StartCoroutine(SlideDoorsClose());
+    }
+
+    private void ForcePlayerOutOfHiding()
+    {
+        if (isPlayerInCloset && !isCooldownActive)
+        {
+            ExitCloset(true);
+            StartCoroutine(ActivateCooldown());
+        }
+    }
+
+    private IEnumerator ActivateCooldown()
+    {
+        isCooldownActive = true;
+        cooldownTimer = hideCooldownTime;
+
+        while (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        isCooldownActive = false;
+    }
+
+    private IEnumerator WaitForTime(float timeToWait)
+    {
+        // Wait for the specified time
+        yield return new WaitForSeconds(timeToWait);
+        StartCoroutine(SlideDoorsClose());
+    }
+
+    // Example method to call the wait
+    public void StartWaiting()
+    {
+        // Start the coroutine with the wait time you want
+        StartCoroutine(WaitForTime(waitTime));
     }
 }
