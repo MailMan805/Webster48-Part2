@@ -7,8 +7,8 @@ public class Snooper : MonoBehaviour
 {
     private NavMeshAgent agent;
     private List<Transform> hidingSpots = new List<Transform>();
-    private int currentSpotIndex = 0;
     public float waitTimeAtHidingSpot = 2f; // Time to wait at each hiding spot
+    public float seekRadius = 20f; // Radius to find nearby hiding spots
 
     void Start()
     {
@@ -61,15 +61,28 @@ public class Snooper : MonoBehaviour
 
     private void MoveToNextHidingSpot()
     {
-        if (hidingSpots.Count > 0)
+        // List to store nearby hiding spots within the seek radius
+        List<Transform> nearbyHidingSpots = new List<Transform>();
+
+        // Filter hiding spots based on distance to the Snooper's current position
+        foreach (Transform hidingSpot in hidingSpots)
         {
-            // Set the next hiding spot as the agent's destination
-            agent.SetDestination(hidingSpots[currentSpotIndex].position);
+            float distance = Vector3.Distance(transform.position, hidingSpot.position);
+            if (distance <= seekRadius)
+            {
+                nearbyHidingSpots.Add(hidingSpot);
+            }
+        }
 
-            // Print the destination for debugging
-
-            // Move to the next index in the list, looping back to the start if at the end
-            currentSpotIndex = (currentSpotIndex + 1) % hidingSpots.Count;
+        // If there are nearby hiding spots, choose a random one
+        if (nearbyHidingSpots.Count > 0)
+        {
+            Transform randomHidingSpot = nearbyHidingSpots[Random.Range(0, nearbyHidingSpots.Count)];
+            agent.SetDestination(randomHidingSpot.position);
+        }
+        else
+        {
+            Debug.LogWarning("No hiding spots found within range!");
         }
     }
 }
