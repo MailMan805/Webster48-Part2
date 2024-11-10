@@ -36,6 +36,7 @@ public class FoodCart : MonoBehaviour
 
     void Start()
     {
+        playerPosition = FindAnyObjectByType<PlayerControls>().transform;
         audioManager = AudioManager.Instance;
         gameManager = GameManager.Instance;
         jester = FindObjectOfType<Jester>();
