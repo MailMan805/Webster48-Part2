@@ -27,7 +27,6 @@ public class BlinkingAnimation : MonoBehaviour
         if (flickerCoroutine == null && images.Length > 0 && displayImage != null)
         {
             flickerCoroutine = StartCoroutine(FlickerImages());
-            Debug.Log("Starting the flickering effect.");
         }
     }
 
@@ -38,7 +37,6 @@ public class BlinkingAnimation : MonoBehaviour
         while (true)
         {
             displayImage.sprite = images[index];
-            Debug.Log($"Image switched to: {images[index].name}");
             index = (index + 1) % images.Length;
             yield return new WaitForSeconds(flickerInterval);
         }
@@ -50,7 +48,6 @@ public class BlinkingAnimation : MonoBehaviour
         {
             StopCoroutine(flickerCoroutine);
             flickerCoroutine = null;
-            Debug.Log("Stopped the flickering effect.");
         }
     }
 }

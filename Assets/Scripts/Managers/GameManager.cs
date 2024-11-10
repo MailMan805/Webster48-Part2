@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
+
 
     public bool isPlayerHiding = false;
     public bool isPlayerDistracted = false;
@@ -15,9 +16,12 @@ public class GameManager : MonoBehaviour
     public bool isWon = false;
     public bool timesUp = false;
     public float phaseDuration;
-    public bool GameOver = false;
+    public bool GameOverJester = false;
+    public bool GameOverGuard = false;
     public bool GameWon = false;
     bool stop = false;
+
+    public bool isJesterChasing = false;
 
     private bool Gameloop = true;
 
@@ -53,15 +57,29 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         
-        if (GameOver && !stop)
+        if (GameOverJester && !stop && isJesterChasing)
         {
             SceneManager.LoadScene("Tori GO Screen");
             stop = true;
+            Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
+            Cursor.visible = true;                   // Makes the cursor visible
+
+        }
+        if (GameOverGuard && !stop)
+        {
+            SceneManager.LoadScene("Tori GO Screen");
+            stop = true;
+            Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
+            Cursor.visible = true;                   // Makes the cursor visible
+
         }
         if (isWon && !stop)
         {
             SceneManager.LoadScene("Tori Win Screen");
             stop = true;
+            Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
+            Cursor.visible = true;                   // Makes the cursor visible
+
         }
     }
 
