@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Sources")]
     public AudioSource musicSource;
+    public AudioSource jesterAudio;
+    public AudioSource guardAudio;
     public AudioSource sfxSource;
 
     [Header("Volume Settings")]
@@ -14,13 +16,21 @@ public class AudioManager : MonoBehaviour
     public float musicVolume = 0.5f;
     [Range(0f, 1f)]
     public float sfxVolume = 0.5f;
+    [Range(0f, 1f)]
+    public float jesterVolume = 0.5f;
+    [Range(0f, 1f)]
+    public float guardVolume = 0.5f;
 
     [Header("Audio Clips")]
     public AudioClip[] musicClips;
     public AudioClip[] sfxClips;
+    public AudioClip[] jesterClips;
+    public AudioClip[] guardClips;
 
     private Dictionary<string, AudioClip> musicDictionary;
     private Dictionary<string, AudioClip> sfxDictionary;
+    private Dictionary<string, AudioClip> jesterDictionary;
+    private Dictionary<string, AudioClip> guardDictionary;
 
     private void Awake()
     {
@@ -51,6 +61,8 @@ public class AudioManager : MonoBehaviour
         // Set initial volume levels
         musicSource.volume = musicVolume;
         sfxSource.volume = sfxVolume;
+        jesterAudio.volume = jesterVolume;
+        guardAudio.volume = guardVolume;
     }
 
     public void PlayMusic(string clipName)
@@ -81,6 +93,34 @@ public class AudioManager : MonoBehaviour
         else
         {
             Debug.LogWarning($"SFX clip '{clipName}' not found!");
+        }
+    }
+
+    public void PlayJester(string clipName)
+    {
+        if (jesterDictionary.TryGetValue(clipName, out AudioClip clip))
+        {
+            jesterAudio.clip = clip;
+            jesterAudio.loop = true;
+            jesterAudio.Play();
+        }
+        else
+        {
+            Debug.LogWarning($"Jester clip '{clipName}' not found!");
+        }
+    }
+
+    public void PlayGuard(string clipName)
+    {
+        if (guardDictionary.TryGetValue(clipName, out AudioClip clip))
+        {
+            guardAudio.clip = clip;
+            guardAudio.loop = true;
+            guardAudio.Play();
+        }
+        else
+        {
+            Debug.LogWarning($"Jester clip '{clipName}' not found!");
         }
     }
 
