@@ -51,14 +51,15 @@ public class GameManager : MonoBehaviour
     }
 
     void Start()
-    { 
-        
+    {
+        Hide1 = FindAnyObjectByType<HideTag>().gameObject;
+        Seek1 = FindAnyObjectByType<SeekTag>().gameObject;
         blinkingAnimation1 = Hide1.GetComponent<BlinkingAnimation>();
         blinkingAnimation2 = Seek1.GetComponent<BlinkingAnimation>();
         audioManager = AudioManager.Instance;
         audioManager.PlayMusic("HideDanceGame01");
-        Hide.gameObject.SetActive(false);
-        Seek.gameObject.SetActive(false);
+        Hide1.gameObject.SetActive(false);
+        Seek1.gameObject.SetActive(false);
 
         StartCoroutine(GameLoop());
 
