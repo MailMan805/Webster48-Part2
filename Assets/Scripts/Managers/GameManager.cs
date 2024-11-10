@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    private float elapsedTime = 0f;
+    public Text timerText;
+
 
     public bool isPlayerHiding = false;
     public bool isPlayerDistracted = false;
@@ -55,11 +58,23 @@ public class GameManager : MonoBehaviour
         Seek.gameObject.SetActive(false);
 
         StartCoroutine(GameLoop());
+
+        elapsedTime = 0f;
     }
 
     private void Update()
     {
         
+        if(Gameloop)
+        {
+            elapsedTime += Time.deltaTime;
+
+            if (timerText != null)
+            {
+                timerText.text = FormatTime(elapsedTime);
+            }
+        }
+
         if (GameOverJester && !stop && isJesterChasing)
         {
             SceneManager.LoadScene("Tori GO Screen");
@@ -177,4 +192,17 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(timeToShowText);
         Text.gameObject.SetActive(false);
     }
+
+    private string FormatTime(float time)
+    {
+        int minutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        return string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public float GetElapsedTime()
+    {
+        return elapsedTime;
+    }
+
 }
