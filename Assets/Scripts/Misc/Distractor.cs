@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEditor.VersionControl;
 
 public class Distractor : MonoBehaviour
 {
@@ -17,10 +19,17 @@ public class Distractor : MonoBehaviour
     private float cooldownTimer = 0f;
     private Vector3 initialPosition;
 
+    public TextMeshProUGUI distractorText; //Flavor text
+
     private void Start()
     {
         gameManager = GameManager.Instance;
         initialPosition = transform.position;
+
+        if (distractorText != null) // Flavor Text
+        {
+            distractorText.gameObject.SetActive(false);  // Hide text at the start
+        }
     }
 
     private void Update()
@@ -79,7 +88,11 @@ public class Distractor : MonoBehaviour
             // Rotate player to face capsule
             player.LookAt(transform);
 
+            distractorText.gameObject.SetActive(true);  // Show the text
+
             yield return null;
+
+            distractorText.gameObject.SetActive(false); // turn off text
         }
 
         // Restore player position and rotation
