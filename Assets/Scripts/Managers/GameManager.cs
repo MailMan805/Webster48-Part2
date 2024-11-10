@@ -87,7 +87,8 @@ public class GameManager : MonoBehaviour
     {
         while (Gameloop)
         {
-
+            int hidecounter = 0;
+            int seekcounter = 0;
             // Phase 1: Neutral Mode
             float neutralWaitTime = Random.Range(10f, 15f);
             isNeutralMode = true;
@@ -102,6 +103,26 @@ public class GameManager : MonoBehaviour
 
             // Phase 2: Choose Hide or Seek Mode
             int phaseChoice = Random.Range(0, 2);
+            if(phaseChoice == 0)
+            {
+               
+                if(hidecounter >= 2)
+                {
+                    phaseChoice = 1;
+                    hidecounter = 0;
+                }
+                hidecounter += 1;
+            }
+            else
+            {
+
+                if (seekcounter >= 2)
+                {
+                    phaseChoice = 0;
+                    hidecounter = 0;
+                }
+                seekcounter += 1;
+            }
             phaseDuration = Random.Range(15f, 25f);
 
             if (phaseChoice == 0)
