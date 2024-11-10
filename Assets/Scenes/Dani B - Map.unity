@@ -102209,6 +102209,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1514793660}
     - target: {fileID: 3527455713376158960, guid: c6561c66cbf20e146ac1266531f4b837, type: 3}
+      propertyPath: hideGuardMaskIcon
+      value: 
+      objectReference: {fileID: 7340633334149301911, guid: 6bfc1a2c854e7c24f99ccc84758aad21, type: 3}
+    - target: {fileID: 3527455713376158960, guid: c6561c66cbf20e146ac1266531f4b837, type: 3}
       propertyPath: blinkingAnimation1
       value: 
       objectReference: {fileID: 85657767}
@@ -102216,6 +102220,10 @@ PrefabInstance:
       propertyPath: blinkingAnimation2
       value: 
       objectReference: {fileID: 1669298615}
+    - target: {fileID: 3527455713376158960, guid: c6561c66cbf20e146ac1266531f4b837, type: 3}
+      propertyPath: seekJesterMaskIcon
+      value: 
+      objectReference: {fileID: 7541401783686959738, guid: 03803129a35431f47b9816614858fc91, type: 3}
     - target: {fileID: 3610259520442090811, guid: c6561c66cbf20e146ac1266531f4b837, type: 3}
       propertyPath: m_Name
       value: GameManager
