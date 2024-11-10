@@ -160,6 +160,7 @@ public class Jester : MonoBehaviour
             StartChasingPlayer(player);
             audioManager.StopMusic();
             audioManager.musicVolume = 1.0f;
+            audioManager.PlaySFX("SeekFailSting");
             audioManager.PlayMusic("CreepingAmbienceBG");
             jesterAnim.SetBool("IsChasing", true);
             gameManager.isJesterChasing = true;

@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
 
         if (GameOverJester && !stop && isJesterChasing)
         {
+            audioManager.PlaySFX("JesterKill");
             SceneManager.LoadScene("Tori GO Screen");
             stop = true;
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
@@ -85,6 +86,7 @@ public class GameManager : MonoBehaviour
         }
         if (GameOverGuard && !stop)
         {
+            audioManager.PlaySFX("GoreDeatht");
             SceneManager.LoadScene("Tori GO Screen");
             stop = true;
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor

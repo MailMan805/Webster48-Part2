@@ -146,6 +146,7 @@ public class FoodCart : MonoBehaviour
         }
         float elapsedTime = 0f;
 
+        audioManager.PlaySFX("DoorInteract");
         // Slide door open over time
         while (elapsedTime < doorSlideSpeed)
         {

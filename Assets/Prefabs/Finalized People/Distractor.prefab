@@ -131,6 +131,7 @@ MonoBehaviour:
   swayAmplitude: 0.5
   playerDanceDuration: 10
   interactionCooldown: 10
+  distractorText: {fileID: 0}
 --- !u!65 &2566078246778579423
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380001521169211713}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 173a08d9a51a0ba408c079242958b342, type: 3}
