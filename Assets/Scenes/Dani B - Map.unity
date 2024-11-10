@@ -5409,7 +5409,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -5432,6 +5432,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -5450,6 +5454,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5481,15 +5489,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 109.91
+      value: 128.68
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 231.35
+      value: 207.09001
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8488,7 +8496,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -8511,6 +8519,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -8529,6 +8541,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8560,15 +8576,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.42
+      value: 32.190002
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 430.13
+      value: 405.87
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8701,7 +8717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8744,6 +8760,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 952418193}
@@ -8761,7 +8781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -9216,7 +9236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9251,6 +9271,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 367176800}
@@ -9268,7 +9292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -14952,7 +14976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14987,6 +15011,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 913141469}
@@ -15004,7 +15032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -16345,7 +16373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16388,6 +16416,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 740226638}
@@ -16405,7 +16437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -27205,20 +27237,7 @@ Transform:
   m_LocalPosition: {x: 62.673004, y: -0.88, z: -86.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2100520683}
-  - {fileID: 718135340}
-  - {fileID: 428623535}
-  - {fileID: 566589788}
-  - {fileID: 170657145}
-  - {fileID: 1163805149}
-  - {fileID: 766787269}
-  - {fileID: 1055806258}
-  - {fileID: 1827510339}
-  - {fileID: 138635573}
-  - {fileID: 477641388}
-  - {fileID: 1814615625}
-  - {fileID: 1082584078}
+  m_Children: []
   m_Father: {fileID: 1168770175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &405330860
@@ -27675,7 +27694,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -27698,6 +27717,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -27716,6 +27739,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27747,15 +27774,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.7
+      value: -31.929998
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 402.7
+      value: 378.44
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28970,11 +28997,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9186c352dda9ce6488a9e043c89738e3, type: 3}
---- !u!4 &428623535 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-  m_PrefabInstance: {fileID: 998484208}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &429840681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29721,7 +29743,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 1965072688510379347, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: west
@@ -29732,12 +29754,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1965072688510379347, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 1965072688510379347, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: playerPosition
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2653670532404176707, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_Name
       value: working cart (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653670532404176707, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5988128892717508724, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29761,15 +29791,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.93
+      value: -36.159996
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.69
+      value: 2.4300022
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -29777,7 +29807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalRotation.y
@@ -29785,7 +29815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30811,7 +30841,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30854,6 +30884,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 1075818881}
@@ -30871,7 +30905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -36920,7 +36954,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -36943,6 +36977,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -36961,6 +36999,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -36992,15 +37034,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.08
+      value: 42.850006
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 107.44
+      value: 83.18
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -44680,7 +44722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44723,6 +44765,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 2057412459}
@@ -44740,7 +44786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -45076,7 +45122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -45123,6 +45169,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 254869276}
@@ -45140,7 +45190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -48829,7 +48879,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -48852,6 +48902,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -48870,6 +48924,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48901,15 +48959,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -144.74
+      value: -125.97
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 396.09
+      value: 371.83002
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -48917,7 +48975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.y
@@ -48925,7 +48983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -49037,7 +49095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49080,6 +49138,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 1929714281}
@@ -49097,7 +49159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -56854,6 +56916,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gaurd
       objectReference: {fileID: 0}
+    - target: {fileID: 4725226697554194648, guid: 6fc51236fd0147646b248ed1d5a7f6e8, type: 3}
+      propertyPath: m_Speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8527811412170686721, guid: 6fc51236fd0147646b248ed1d5a7f6e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.38
@@ -57729,7 +57795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -57772,6 +57838,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 1784221819}
@@ -57789,7 +57859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -61167,7 +61237,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61210,6 +61280,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 1577960185}
@@ -61227,7 +61301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -61937,8 +62011,8 @@ MonoBehaviour:
   m_GenerateLinks: 0
   m_IgnoreNavMeshAgent: 1
   m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
+  m_OverrideTileSize: 1
+  m_TileSize: 800
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
@@ -62998,79 +63072,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8409711547727194786, guid: 9186c352dda9ce6488a9e043c89738e3, type: 3}
   m_PrefabInstance: {fileID: 1156051658}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &922036879
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 428623535}
-    m_Modifications:
-    - target: {fileID: 2159606362765815628, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_Name
-      value: Cart
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.982899
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 11.613426
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
 --- !u!1 &923202804
 GameObject:
   m_ObjectHideFlags: 0
@@ -65603,11 +65604,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949645477}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &950235828 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4037758996767557258, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-  m_PrefabInstance: {fileID: 922036879}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &950654812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68857,136 +68853,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 997673121}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &998484208
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
-    m_Modifications:
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: door
-      value: 
-      objectReference: {fileID: 950235828}
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: east
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: west
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: north
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: south
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: doorSlideSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: playerPosition
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2946016046979810937, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.4173868
-      objectReference: {fileID: 0}
-    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_Name
-      value: Food Cart Trigger (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9659259
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.258819
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 6617004790334380974, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.327
-      objectReference: {fileID: 0}
-    - target: {fileID: 6617004790334380974, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.046
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -51.74
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 65.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710784
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.70710576
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 5587423043495581013, guid: 185defc65598b2e4d8899db811943546, type: 3}
-    - {fileID: 2045127225330477300, guid: 185defc65598b2e4d8899db811943546, type: 3}
-    - {fileID: 9183962630616543294, guid: 185defc65598b2e4d8899db811943546, type: 3}
-    - {fileID: 7985110729800545853, guid: 185defc65598b2e4d8899db811943546, type: 3}
-    - {fileID: 5301795590420062126, guid: 185defc65598b2e4d8899db811943546, type: 3}
-    - {fileID: 5176781213882191926, guid: 185defc65598b2e4d8899db811943546, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 1543317456}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 185defc65598b2e4d8899db811943546, type: 3}
 --- !u!1 &998685220
 GameObject:
   m_ObjectHideFlags: 0
@@ -69314,6 +69180,19 @@ Transform:
   - {fileID: 830974952}
   - {fileID: 402689459}
   - {fileID: 710039072}
+  - {fileID: 2100520683}
+  - {fileID: 718135340}
+  - {fileID: 7913754485338876641}
+  - {fileID: 566589788}
+  - {fileID: 170657145}
+  - {fileID: 1163805149}
+  - {fileID: 766787269}
+  - {fileID: 1055806258}
+  - {fileID: 1827510339}
+  - {fileID: 138635573}
+  - {fileID: 477641388}
+  - {fileID: 1814615625}
+  - {fileID: 1082584078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1000634969
@@ -70441,7 +70320,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -70464,6 +70343,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -70482,6 +70365,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70513,15 +70400,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 66.52
+      value: 85.28999
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 299.18
+      value: 274.91998
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73666,7 +73553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -73709,6 +73596,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 673444768}
@@ -73726,7 +73617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -75848,7 +75739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -75891,6 +75782,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 2098384109}
@@ -75908,7 +75803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -77275,7 +77170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -77318,6 +77213,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 2480525}
@@ -77335,7 +77234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -89375,7 +89274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -89418,6 +89317,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 1480613651}
@@ -89435,7 +89338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -92425,7 +92328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -92460,6 +92363,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 1308537542}
@@ -92477,7 +92384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -95296,7 +95203,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -95319,6 +95226,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -95337,6 +95248,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -95368,15 +95283,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -117.16
+      value: -98.39
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 300.18
+      value: 275.91998
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -96519,7 +96434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -96562,6 +96477,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 191685781}
@@ -96579,7 +96498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -98454,7 +98373,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1435822756728393501, guid: e52b38c79e64b1f4b946b1889b97849a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 314.67273
+      value: 106.35
       objectReference: {fileID: 0}
     - target: {fileID: 1435822756728393501, guid: e52b38c79e64b1f4b946b1889b97849a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -98502,7 +98421,7 @@ PrefabInstance:
       objectReference: {fileID: 524993211}
     - target: {fileID: 8424739005690646088, guid: e52b38c79e64b1f4b946b1889b97849a, type: 3}
       propertyPath: seekRadius
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8424739005690646088, guid: e52b38c79e64b1f4b946b1889b97849a, type: 3}
       propertyPath: audioManager
@@ -99472,7 +99391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -99519,6 +99438,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 246802411}
@@ -99536,7 +99459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -100402,7 +100325,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -100425,6 +100348,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -100443,6 +100370,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -100474,15 +100405,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.08
+      value: -72.31
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 254.56
+      value: 230.3
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -102658,7 +102589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -102701,6 +102632,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 1648133290}
@@ -102718,7 +102653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -110920,11 +110855,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8409711547727194786, guid: 9186c352dda9ce6488a9e043c89738e3, type: 3}
   m_PrefabInstance: {fileID: 1542266630}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1543317456 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4090972617692929954, guid: 59cd446bef4ae5141834f917da204eec, type: 3}
-  m_PrefabInstance: {fileID: 922036879}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1544359343
 PrefabInstance:
@@ -122403,7 +122333,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -122426,6 +122356,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -122444,6 +122378,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -122475,15 +122413,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -146.02
+      value: -127.25
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 235.26
+      value: 211
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -124643,7 +124581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -124686,6 +124624,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 812432950}
@@ -124703,7 +124645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -127298,7 +127240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -127333,6 +127275,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 7032376}
@@ -127350,7 +127296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -127958,6 +127904,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9186c352dda9ce6488a9e043c89738e3, type: 3}
+--- !u!114 &1825216311 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8424739005690646088, guid: e52b38c79e64b1f4b946b1889b97849a, type: 3}
+  m_PrefabInstance: {fileID: 1388691862}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb78e9f9bc52304a9acefdd49d1d9bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1827510339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
@@ -130632,7 +130589,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: door
@@ -130655,6 +130612,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 952767686049871509, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 0}
@@ -130673,6 +130634,10 @@ PrefabInstance:
     - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_Name
       value: Food Cart Trigger (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651862195020362885, guid: 185defc65598b2e4d8899db811943546, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
       objectReference: {fileID: 0}
     - target: {fileID: 5001147996955261874, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -130704,15 +130669,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.04
+      value: 74.810005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 341.91
+      value: 317.65002
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.w
@@ -130720,7 +130685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.y
@@ -130728,7 +130693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7913754486001402385, guid: 185defc65598b2e4d8899db811943546, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -135434,7 +135399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -135477,6 +135442,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 874506989}
@@ -135494,7 +135463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -151903,7 +151872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 5429669838408707624, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_LocalPosition.z
@@ -151946,6 +151915,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    - target: {fileID: 6051967075688391172, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: LeftDoor
       value: 
       objectReference: {fileID: 2004190223}
@@ -151963,7 +151936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7448750961330530923, guid: a5290c64887d9f24896ab20a2cf31a43, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Hiding Spot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -152103,17 +152076,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Closet
       objectReference: {fileID: 0}
+    - target: {fileID: 5258366995089696775, guid: d6c842074a7890049a0772dc9101b899, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
+      objectReference: {fileID: 0}
     - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.91
       objectReference: {fileID: 0}
     - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
       propertyPath: m_LocalRotation.w
@@ -152220,8 +152197,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 404944977}
+    m_TransformParent: {fileID: 1000066182}
     m_Modifications:
+    - target: {fileID: 1965072688510379347, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
     - target: {fileID: 1965072688510379347, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: playerPosition
       value: 
@@ -152229,6 +152210,18 @@ PrefabInstance:
     - target: {fileID: 2653670532404176707, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_Name
       value: working cart
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653670532404176707, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
+      propertyPath: m_TagString
+      value: Hiding Spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732442989708682447, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.912
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732442989708682447, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.219
       objectReference: {fileID: 0}
     - target: {fileID: 5988128892717508724, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -152252,15 +152245,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 18.770002
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.38500005
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -24.260002
       objectReference: {fileID: 0}
     - target: {fileID: 8912328846578422231, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -152295,6 +152288,72 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a639143f6533ef43ab2e01d3bd463fe, type: 3}
+--- !u!1001 &7593953930579238090
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1000066182}
+    m_Modifications:
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.969997
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.38500005
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 40.759995
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6757169620292936071, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: m_Name
+      value: Food Cart Trigger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600659719240524512, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+      propertyPath: jester
+      value: 
+      objectReference: {fileID: 1825216311}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+--- !u!4 &7913754485338876641 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 624513283873150806, guid: 927d1ec4fc48e3544b54eb53cae6f131, type: 3}
+  m_PrefabInstance: {fileID: 7593953930579238090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
