@@ -51,10 +51,6 @@ public class PlayerControls : MonoBehaviour
         // Ensure the Rigidbody is not kinematic, allowing physics-based interactions
         rb.isKinematic = false;
 
-        // Set Rigidbody settings to help smooth movement
-        rb.interpolation = RigidbodyInterpolation.Interpolate;
-        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-
         // Disable gravity to allow movement in all directions
         rb.useGravity = false;
         Knife.gameObject.SetActive(false);
