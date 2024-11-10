@@ -28,14 +28,18 @@ public class GameManager : MonoBehaviour
     private bool Gameloop = true;
 
     public float timeToShowText = 3f;
-    public GameObject Hide;
-    public GameObject Seek;
-
+    public GameObject Hide1;
+    public GameObject Seek1;
+    
     // Reference to the BlinkingAnimation script
     public BlinkingAnimation blinkingAnimation1;
     public BlinkingAnimation blinkingAnimation2;
 
     public AudioManager audioManager;
+
+
+    public GameObject seekJesterMaskIcon;
+    public GameObject hideGuardMaskIcon;
 
     private void Awake()
     {
@@ -52,10 +56,16 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Hide1 = FindAnyObjectByType<HideTag>().gameObject;
+        Seek1 = FindAnyObjectByType<SeekTag>().gameObject;
+        blinkingAnimation1 = Hide1.GetComponent<BlinkingAnimation>();
+        blinkingAnimation2 = Seek1.GetComponent<BlinkingAnimation>();
         audioManager = AudioManager.Instance;
         audioManager.PlayMusic("HideDanceGame01");
-        Hide.gameObject.SetActive(false);
-        Seek.gameObject.SetActive(false);
+        Hide1.gameObject.SetActive(false);
+        Seek1.gameObject.SetActive(false);
+        seekJesterMaskIcon.SetActive(false);
+        hideGuardMaskIcon.SetActive(false);
 
         StartCoroutine(GameLoop());
 
@@ -78,7 +88,7 @@ public class GameManager : MonoBehaviour
         if (GameOverJester && !stop && isJesterChasing)
         {
             audioManager.PlaySFX("JesterKill");
-            SceneManager.LoadScene("Tori GO Screen");
+            SceneManager.LoadScene("GO Jester");
             stop = true;
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
             Cursor.visible = true;                   // Makes the cursor visible
@@ -87,7 +97,7 @@ public class GameManager : MonoBehaviour
         if (GameOverGuard && !stop)
         {
             audioManager.PlaySFX("GoreDeatht");
-            SceneManager.LoadScene("Tori GO Screen");
+            SceneManager.LoadScene("GO Guard");
             stop = true;
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
             Cursor.visible = true;                   // Makes the cursor visible
@@ -150,22 +160,24 @@ public class GameManager : MonoBehaviour
                 audioManager.StopMusic();
                 audioManager.PlaySFX("RecordScratch");
                 audioManager.PlayMusic("HideDanceGame02");
-                StartCoroutine(FlashText(Hide));
+                StartCoroutine(FlashText(Hide1));
                 isHideMode = true;
                 isNeutralMode = false;
                 isSeekMode = false;
                 Debug.Log("Hide Mode");
+                hideGuardMaskIcon.SetActive(true);
             }
             else
             {
                 audioManager.StopMusic();
                 audioManager.PlaySFX("RecordScratch");
                 audioManager.PlayMusic("HideDanceGame02");
-                StartCoroutine(FlashText(Seek));
+                StartCoroutine(FlashText(Seek1));
                 isSeekMode = true;
                 isNeutralMode = false;
                 isHideMode = false;
-                Debug.Log("Seek Mode");
+                Debug.Log("Seek Mode"); 
+                seekJesterMaskIcon.SetActive(true);
             }
 
             // Start the flickering animation in Hide or Seek Mode
@@ -182,6 +194,8 @@ public class GameManager : MonoBehaviour
             audioManager.StopMusic();
             audioManager.PlayMusic("HideDanceGame01");
             Debug.Log("Back to Neutral Mode");
+            seekJesterMaskIcon.SetActive(false);
+            hideGuardMaskIcon.SetActive(false);
         }
     
 
