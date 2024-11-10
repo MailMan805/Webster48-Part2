@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
             if (phaseChoice == 0)
             {
                 audioManager.StopMusic();
+                audioManager.PlaySFX("RecordScratch");
                 audioManager.PlayMusic("HideDanceGame02");
                 StartCoroutine(FlashText(Hide));
                 isHideMode = true;
@@ -141,6 +142,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 audioManager.StopMusic();
+                audioManager.PlaySFX("RecordScratch");
                 audioManager.PlayMusic("HideDanceGame02");
                 StartCoroutine(FlashText(Seek));
                 isSeekMode = true;

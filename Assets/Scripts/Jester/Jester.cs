@@ -103,6 +103,7 @@ public class Jester : MonoBehaviour
         if (currentHidingSpot != null && Vector3.Distance(playerLocation.position, currentHidingSpot.position) < 5f)
         {
             found = true;
+            
             // Player found the Jester
             StartWaiting();
             
@@ -120,6 +121,9 @@ public class Jester : MonoBehaviour
     private IEnumerator WaitForTime(float timeToWait)
     {
         // Wait for the specified time
+        audioManager.PlaySFX("JesterFoundFinal_mixdown");
+        audioManager.StopMusic();
+        audioManager.PlayMusic("HideDanceGame01");
         yield return new WaitForSeconds(timeToWait);
         gameManager.isSeekMode = false;
         gameManager.isNeutralMode = true;
@@ -146,6 +150,9 @@ public class Jester : MonoBehaviour
         {
             StartCoroutine(FlashText(TimesUp));
             StartChasingPlayer(player);
+            audioManager.StopMusic();
+            audioManager.musicVolume = 1.0f;
+            audioManager.PlayMusic("CreepingAmbienceBG");
             gameManager.isJesterChasing = true;
         }
         
