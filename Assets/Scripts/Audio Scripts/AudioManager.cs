@@ -110,6 +110,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopJester()
+    {
+        jesterAudio.Stop();
+    }
+
     public void PlayGuard(string clipName)
     {
         if (guardDictionary.TryGetValue(clipName, out AudioClip clip))
@@ -122,6 +127,11 @@ public class AudioManager : MonoBehaviour
         {
             Debug.LogWarning($"Jester clip '{clipName}' not found!");
         }
+    }
+
+    public void StopGuard()
+    {
+        guardAudio.Stop();
     }
 
     public void SetMusicVolume(float volume)
