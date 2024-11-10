@@ -461,7 +461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 508.4, y: 354.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129819544
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2929abf69f5bd7e44859ce70040bcc55, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37fa7721d51ebe745b9e942025ea61b6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -907,7 +907,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 1700, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1996957755
@@ -930,7 +930,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The tyrant king lives on. '
+  m_text: 'You were killed by the Guard.
+
+    The tyrant king lives on. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b69a1a11a077504a93918c96a50cff5, type: 2}
   m_sharedMaterial: {fileID: 6758139234328576024, guid: 3b69a1a11a077504a93918c96a50cff5, type: 2}

@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
 
     public AudioManager audioManager;
 
+
+    // Mask Icons
+    public GameObject seekJesterMaskIcon;
+    public GameObject hideGuardMaskIcon;
+
     private void Awake()
     {
         if (Instance == null)
@@ -60,6 +65,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameLoop());
 
         elapsedTime = 0f;
+
+        hideGuardMaskIcon.SetActive(false);
+        seekJesterMaskIcon.SetActive(false);
     }
 
     private void Update()
@@ -77,7 +85,7 @@ public class GameManager : MonoBehaviour
 
         if (GameOverJester && !stop && isJesterChasing)
         {
-            SceneManager.LoadScene("Tori GO Screen");
+            SceneManager.LoadScene("GO Jester");
             stop = true;
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
             Cursor.visible = true;                   // Makes the cursor visible
@@ -85,7 +93,7 @@ public class GameManager : MonoBehaviour
         }
         if (GameOverGuard && !stop)
         {
-            SceneManager.LoadScene("Tori GO Screen");
+            SceneManager.LoadScene("GO Guard");
             stop = true;
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
             Cursor.visible = true;                   // Makes the cursor visible
@@ -153,6 +161,7 @@ public class GameManager : MonoBehaviour
                 isNeutralMode = false;
                 isSeekMode = false;
                 Debug.Log("Hide Mode");
+                hideGuardMaskIcon.SetActive(true);
             }
             else
             {
@@ -164,11 +173,13 @@ public class GameManager : MonoBehaviour
                 isNeutralMode = false;
                 isHideMode = false;
                 Debug.Log("Seek Mode");
+                seekJesterMaskIcon.SetActive(true);
             }
 
             // Start the flickering animation in Hide or Seek Mode
             blinkingAnimation1?.StartFlickering();
             blinkingAnimation2?.StartFlickering();
+
 
 
             yield return new WaitForSeconds(phaseDuration);
@@ -180,6 +191,8 @@ public class GameManager : MonoBehaviour
             audioManager.StopMusic();
             audioManager.PlayMusic("HideDanceGame01");
             Debug.Log("Back to Neutral Mode");
+            hideGuardMaskIcon.SetActive(false);
+            seekJesterMaskIcon.SetActive(false);
         }
     
 

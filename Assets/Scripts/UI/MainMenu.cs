@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public Button playButton;
     public Button quitButton;
     public Button acceptButton;
+    public Button declineButton;
 
     public GameObject splashScreen;
 
@@ -24,6 +25,9 @@ public class MainMenu : MonoBehaviour
         
         if (acceptButton != null)
             acceptButton.onClick.AddListener(OnAcceptButtonClick);
+
+        if (declineButton != null)
+            declineButton.onClick.AddListener(OnDeclineButtonClick);
 
         splashScreen.SetActive(false);
     }
@@ -44,5 +48,11 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit Game");
         Application.Quit();
+    }
+
+    private void OnDeclineButtonClick()
+    {
+        splashScreen.SetActive(false);
+        Debug.Log("no thank u");
     }
 }
