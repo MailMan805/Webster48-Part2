@@ -17,6 +17,8 @@ public class Jester : MonoBehaviour
     public GameObject TimesUp;
     public float timeToShowText = 3f;
 
+    public Animator jesterAnim;
+
     public bool found = false;
     private bool isChasingPlayer = false; // If the Jester is chasing the player
 
@@ -153,6 +155,7 @@ public class Jester : MonoBehaviour
             audioManager.StopMusic();
             audioManager.musicVolume = 1.0f;
             audioManager.PlayMusic("CreepingAmbienceBG");
+            jesterAnim.SetBool("IsChasing", true);
             gameManager.isJesterChasing = true;
         }
         
