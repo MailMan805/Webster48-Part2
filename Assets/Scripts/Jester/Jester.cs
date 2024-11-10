@@ -143,6 +143,7 @@ public class Jester : MonoBehaviour
         {
             StartCoroutine(FlashText(TimesUp));
             StartChasingPlayer(player);
+            gameManager.isJesterChasing = true;
         }
         
     }

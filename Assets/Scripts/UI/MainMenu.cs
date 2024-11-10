@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnAcceptButtonClick()
     {     
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Dani B - Map");
         splashScreen.SetActive(false);
         Debug.Log("Play the scene");
     }

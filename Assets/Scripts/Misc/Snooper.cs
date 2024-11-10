@@ -67,7 +67,6 @@ public class Snooper : MonoBehaviour
             agent.SetDestination(hidingSpots[currentSpotIndex].position);
 
             // Print the destination for debugging
-            Debug.Log("Moving to hiding spot: " + hidingSpots[currentSpotIndex].name);
 
             // Move to the next index in the list, looping back to the start if at the end
             currentSpotIndex = (currentSpotIndex + 1) % hidingSpots.Count;
