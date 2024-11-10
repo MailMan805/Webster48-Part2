@@ -156,7 +156,15 @@ public class GameManager : MonoBehaviour
                 }
                 seekcounter += 1;
             }
-            phaseDuration = Random.Range(15f, 25f);
+            if (phaseChoice == 0)
+            {
+                phaseDuration = Random.Range(15f, 25f);
+            }
+            else 
+            {
+                phaseDuration = Random.Range(30f, 45f);
+            }
+
 
             if (phaseChoice == 0)
             {
