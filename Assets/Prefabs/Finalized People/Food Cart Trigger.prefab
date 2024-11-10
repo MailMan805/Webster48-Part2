@@ -230,7 +230,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.36, y: 2.29, z: 3.64}
+  m_Size: {x: 5.77, y: 2.29, z: 6.74}
   m_Center: {x: -4.99, y: 0.42, z: 16.79}
 --- !u!114 &952767686049871509
 MonoBehaviour:
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  jester: {fileID: 0}
   playerPosition: {fileID: 0}
   cartPosition: {fileID: 6617004790334380974}
   cameraRotation: {fileID: 5001147996955261874}
@@ -252,7 +253,13 @@ MonoBehaviour:
   doorSlideSpeed: 2
   playerTransitionSpeed: 1
   hideCooldownTime: 5
+  north: 1
+  east: 0
+  south: 0
+  west: 0
+  waitTime: 2
   tempPlayerPosition: {fileID: 2946016046979810937}
+  audioManager: {fileID: 0}
 --- !u!1 &5176781213882191926
 GameObject:
   m_ObjectHideFlags: 0

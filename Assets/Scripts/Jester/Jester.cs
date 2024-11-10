@@ -83,8 +83,14 @@ public class Jester : MonoBehaviour
             Transform selectedHidingSpot = validHidingSpots[Random.Range(0, validHidingSpots.Count)];
             currentHidingSpot = selectedHidingSpot;
 
+            // Disable the NavMeshAgent to allow direct teleportation
+            agent.enabled = false;
+
             // Teleport the jester to the selected hiding spot
             transform.position = selectedHidingSpot.position;
+
+            // Re-enable the NavMeshAgent (optional)
+            agent.enabled = true;
         }
         else
         {
@@ -154,6 +160,7 @@ public class Jester : MonoBehaviour
             StartChasingPlayer(player);
             audioManager.StopMusic();
             audioManager.musicVolume = 1.0f;
+            audioManager.PlaySFX("SeekFailSting");
             audioManager.PlayMusic("CreepingAmbienceBG");
             jesterAnim.SetBool("IsChasing", true);
             gameManager.isJesterChasing = true;
