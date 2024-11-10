@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Loner : MonoBehaviour
@@ -18,10 +19,18 @@ public class Loner : MonoBehaviour
     private Vector3 initialPosition;
     private bool playerInRange = false; // Track if player is in range
 
+
+    public TextMeshProUGUI lonerText; //Flavor text
+
     private void Start()
     {
         gameManager = GameManager.Instance;
         initialPosition = transform.position;
+
+        if (lonerText != null) // Flavor Text
+        {
+            lonerText.gameObject.SetActive(false);  // Hide text at the start
+        }
     }
 
     private void Update()
@@ -95,7 +104,11 @@ public class Loner : MonoBehaviour
             // Rotate player to face capsule
             player.LookAt(transform);
 
+            lonerText.gameObject.SetActive(true);  // Show the text
+
             yield return null;
+
+            lonerText.gameObject.SetActive(false); // turn off text
         }
 
         // Restore player position and rotation
