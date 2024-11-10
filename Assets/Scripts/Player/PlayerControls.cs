@@ -13,8 +13,11 @@ public class PlayerControls : MonoBehaviour
     private Transform playerBody; // Reference to player's body for rotation
     private Rigidbody rb; // Reference to player's Rigidbody for physics-based movement
 
+    public AudioManager audioManager;
+
     void Start()
     {
+        audioManager = AudioManager.Instance;
         gameManager = GameManager.Instance;
 
         // Lock the cursor and make it invisible

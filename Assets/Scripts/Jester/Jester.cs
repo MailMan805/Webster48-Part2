@@ -21,8 +21,11 @@ public class Jester : MonoBehaviour
     private bool isChasingPlayer = false; // If the Jester is chasing the player
 
     public BlinkingAnimation blinkingAnimation1;
+
+    public AudioManager audioManager;
     void Start()
     {
+        audioManager = AudioManager.Instance;
         TimesUp.SetActive(false);
         gameManager = GameManager.Instance;
         agent = GetComponent<NavMeshAgent>();
