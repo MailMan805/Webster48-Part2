@@ -25,6 +25,7 @@ public class Loner : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager.Instance;
+        lonerText = gameManager.lonerText;
         initialPosition = transform.position;
 
         if (lonerText != null) // Flavor Text

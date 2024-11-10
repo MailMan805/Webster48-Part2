@@ -16,14 +16,16 @@ public class Distractor : MonoBehaviour
     public float interactionCooldown = 10f;
 
     private bool isDancingWithPlayer = false;
-    private float cooldownTimer = 0f;
+    private float cooldownTimer = 10f;
     private Vector3 initialPosition;
 
     public TextMeshProUGUI distractorText; //Flavor text
 
     private void Start()
     {
+        //distractorText = 
         gameManager = GameManager.Instance;
+        distractorText = gameManager.distractorText;
         initialPosition = transform.position;
 
         if (distractorText != null) // Flavor Text

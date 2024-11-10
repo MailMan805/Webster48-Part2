@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     private float elapsedTime = 0f;
     public Text timerText;
 
+    public TextMeshProUGUI distractorText;
+    public TextMeshProUGUI lonerText;
 
     public bool isPlayerHiding = false;
     public bool isPlayerDistracted = false;
