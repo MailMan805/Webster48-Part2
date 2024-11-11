@@ -27,6 +27,7 @@ public class Jester : MonoBehaviour
     public AudioManager audioManager;
     void Start()
     {
+        
         audioManager = AudioManager.Instance;
         TimesUp.SetActive(false);
         gameManager = GameManager.Instance;

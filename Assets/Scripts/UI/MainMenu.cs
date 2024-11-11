@@ -12,6 +12,8 @@ public class MainMenu : MonoBehaviour
     public Button acceptButton;
     public Button declineButton;
 
+    public GameManager gameManager;
+
     public GameObject splashScreen;
 
     // Start is called before the first frame update
@@ -29,6 +31,8 @@ public class MainMenu : MonoBehaviour
         if (declineButton != null)
             declineButton.onClick.AddListener(OnDeclineButtonClick);
 
+        gameManager = GameManager.Instance;
+
         splashScreen.SetActive(false);
     }
 
@@ -39,15 +43,27 @@ public class MainMenu : MonoBehaviour
     }
 
     private void OnAcceptButtonClick()
-    {     
-        SceneManager.LoadScene("Dani B - Map");
+    {
+        gameManager.GameOverGuard = false;
+        gameManager.GameOverJester = false;
+        gameManager.isSeekMode = false;
+        gameManager.isHideMode = false;
+        gameManager.isNeutralMode = true;
+        gameManager.isWon = false;
+        gameManager.timesUp = false;
+        gameManager.Gameloop = true;
+        gameManager.stop = false;
+        gameManager.isJesterChasing = false;
         splashScreen.SetActive(false);
+        SceneManager.LoadScene("Dani B - Map");
         Debug.Log("Play the scene");
+       
     }
     private void OnQuitButtonClick()
     {
         Debug.Log("Quit Game");
         Application.Quit();
+
     }
 
     private void OnDeclineButtonClick()

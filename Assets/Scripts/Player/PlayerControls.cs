@@ -27,7 +27,6 @@ public class PlayerControls : MonoBehaviour
 
     void Start()
     {
-        
         KnifeStartPosition = Knife.transform.position; // Store initial position
         KnifeOffset = Knife.transform.position - transform.position; // Calculate initial offset from player
         KnifeStartRotation = Knife.transform.rotation; // Store initial rotation of Knife
@@ -53,7 +52,9 @@ public class PlayerControls : MonoBehaviour
 
         // Disable gravity to allow movement in all directions
         rb.useGravity = false;
-        Knife.gameObject.SetActive(false);
+
+        // Initially hide the knife until KingSlayer mode is activated
+        Knife.SetActive(false);
     }
 
     void Update()
@@ -71,12 +72,14 @@ public class PlayerControls : MonoBehaviour
             playerBody.Rotate(Vector3.up * mouseX); // Apply Y rotation to the player body
         }
 
-        // Update the Knife position and rotation relative to the player
+        // Update the Knife position and rotation relative to the player when KingSlayer mode is active
         if (!kingSlayer)
         {
-            Knife.gameObject.SetActive(false);
-            Knife.transform.position = transform.position + transform.rotation * KnifeOffset; // Keep knife at initial offset
-            Knife.transform.rotation = KnifeStartRotation; // Keep knife's initial rotation
+            // Keep the knife at its initial offset from the player
+            Knife.transform.position = transform.position + transform.rotation * KnifeOffset;
+
+            // Rotate the knife along with the player (relative to the player's body rotation)
+            Knife.transform.rotation = playerBody.rotation * KnifeStartRotation;
         }
     }
 
@@ -121,6 +124,7 @@ public class PlayerControls : MonoBehaviour
     {
         kingSlayer = true;
         canMove = false; // Disable player movement
+        Knife.SetActive(true); // Make the knife visible
         StartCoroutine(KingSlayerAnim());
     }
 
@@ -129,31 +133,34 @@ public class PlayerControls : MonoBehaviour
         float elapsedTime = 0f;
 
         // Stabbing animation: Knife moves up and down in a loop
-        Vector3 stabPosition1 = Knife.transform.position + Vector3.up * 2f; // Move down a bit to simulate a stab
-        Vector3 stabPosition2 = Knife.transform.position + Vector3.down * 3f; // Move down a bit to simulate a stab
+        Vector3 stabPosition1 = Knife.transform.position + Vector3.up * 1.2f; // Move up a bit to simulate a stab
+        Vector3 stabPosition2 = Knife.transform.position + Vector3.down * 1f; // Move down a bit to simulate a stab
+
+        // First stabbing phase (up-down motion)
         while (elapsedTime < KnifeSpeed)
         {
-            // Move knife up and down based on elapsed time
             Knife.transform.position = Vector3.Lerp(Knife.transform.position, stabPosition1, Mathf.PingPong(elapsedTime * KnifeSpeed, 1f));
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+ 
+
+        // Wait for the specified time before continuing (timeToKill)
+        yield return new WaitForSeconds(timeToKill);
         elapsedTime = 0f;
 
-        yield return new WaitForSeconds(timeToKill);
-
+        // Second stabbing phase (down-up motion)
         while (elapsedTime < KnifeSpeed)
         {
-            // Move knife up and down based on elapsed time
-            Knife.transform.position = Vector3.Lerp(stabPosition2, Knife.transform.position, Mathf.PingPong(elapsedTime * KnifeSpeed, 1f));
+            Knife.transform.position = Vector3.Lerp(stabPosition1, stabPosition2, Mathf.PingPong(elapsedTime * (KnifeSpeed * 2) , 1f));
 
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        
-
-        // Animation ends, player wins
+        Knife.SetActive(false);
+        // End the KingSlayer animation
         gameManager.isWon = true;
         canMove = true; // Re-enable player movement
         kingSlayer = false; // Reset KingSlayer status

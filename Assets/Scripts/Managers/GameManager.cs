@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour
     public bool GameOverJester = false;
     public bool GameOverGuard = false;
     public bool GameWon = false;
-    bool stop = false;
+    public bool stop = false;
     public bool isJesterChasing = false;
 
-    private bool Gameloop = true;
+    public bool Gameloop = true;
 
     public float timeToShowText = 3f;
     public GameObject Hide1;
