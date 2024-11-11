@@ -36,7 +36,7 @@ public class Distractor : MonoBehaviour
     private void Update()
     {
         // Handle cooldown for player interaction
-        if (cooldownTimer > 0f)
+        if (cooldownTimer > 0f && !isDancingWithPlayer)
         {
             cooldownTimer -= Time.deltaTime;
         }
@@ -63,6 +63,7 @@ public class Distractor : MonoBehaviour
     {
         if (other.CompareTag("Player") && cooldownTimer <= 0f)
         {
+            cooldownTimer = interactionCooldown;
             StartCoroutine(DanceWithPlayer(other.transform));
         }
     }
@@ -101,7 +102,6 @@ public class Distractor : MonoBehaviour
         player.rotation = playerOriginalRotation;
 
         // Start cooldown
-        cooldownTimer = interactionCooldown;
         isDancingWithPlayer = false;
     }
 }

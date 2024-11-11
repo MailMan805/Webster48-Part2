@@ -120,93 +120,98 @@ public class GameManager : MonoBehaviour
     {
         while (Gameloop)
         {
-            int hidecounter = 0;
-            int seekcounter = 0;
-            // Phase 1: Neutral Mode
-            float neutralWaitTime = Random.Range(10f, 15f);
-            isNeutralMode = true;
-            isHideMode = false;
-            isSeekMode = false;
-            Debug.Log("Neutral Mode");
-
-            // Stop the flickering if active
-            blinkingAnimation1?.StopFlickering();
-            blinkingAnimation2?.StopFlickering();
-            yield return new WaitForSeconds(neutralWaitTime);
-
-            // Phase 2: Choose Hide or Seek Mode
-            int phaseChoice = Random.Range(0, 2);
-            if(phaseChoice == 0)
-            {
-               
-                if(hidecounter >= 2)
-                {
-                    phaseChoice = 1;
-                    hidecounter = 0;
-                }
-                hidecounter += 1;
-            }
-            else
-            {
-
-                if (seekcounter >= 2)
-                {
-                    phaseChoice = 0;
-                    hidecounter = 0;
-                }
-                seekcounter += 1;
-            }
-            if (phaseChoice == 0)
-            {
-                phaseDuration = Random.Range(15f, 25f);
-            }
-            else 
-            {
-                phaseDuration = Random.Range(30f, 45f);
-            }
-
-
-            if (phaseChoice == 0)
-            {
-                audioManager.StopMusic();
-                audioManager.PlaySFX("RecordScratch");
-                audioManager.PlayMusic("HideDanceGame02");
-                StartCoroutine(FlashText(Hide1));
-                isHideMode = true;
-                isNeutralMode = false;
-                isSeekMode = false;
-                Debug.Log("Hide Mode");
-                hideGuardMaskIcon.SetActive(true);
-            }
-            else
-            {
-                audioManager.StopMusic();
-                audioManager.PlaySFX("RecordScratch");
-                audioManager.PlayMusic("HideDanceGame02");
-                StartCoroutine(FlashText(Seek1));
-                isSeekMode = true;
-                isNeutralMode = false;
+            
+                int hidecounter = 0;
+                int seekcounter = 0;
+                // Phase 1: Neutral Mode
+                float neutralWaitTime = Random.Range(10f, 15f);
+                isNeutralMode = true;
                 isHideMode = false;
-                Debug.Log("Seek Mode"); 
-                seekJesterMaskIcon.SetActive(true);
+                isSeekMode = false;
+                Debug.Log("Neutral Mode");
+
+                // Stop the flickering if active
+                blinkingAnimation1?.StopFlickering();
+                blinkingAnimation2?.StopFlickering();
+                yield return new WaitForSeconds(neutralWaitTime);
+
+            if (!isJesterChasing)
+            {
+                // Phase 2: Choose Hide or Seek Mode
+                int phaseChoice = Random.Range(0, 2);
+                if (phaseChoice == 0)
+                {
+
+                    if (hidecounter >= 2)
+                    {
+                        phaseChoice = 1;
+                        hidecounter = 0;
+                    }
+                    hidecounter += 1;
+                }
+                else
+                {
+
+                    if (seekcounter >= 2)
+                    {
+                        phaseChoice = 0;
+                        hidecounter = 0;
+                    }
+                    seekcounter += 1;
+                }
+                if (phaseChoice == 0)
+                {
+                    phaseDuration = Random.Range(15f, 25f);
+                }
+                else
+                {
+                    phaseDuration = Random.Range(30f, 45f);
+                }
+
+
+                if (phaseChoice == 0)
+                {
+                    audioManager.StopMusic();
+                    audioManager.PlaySFX("RecordScratch");
+                    audioManager.PlayMusic("HideDanceGame02");
+                    StartCoroutine(FlashText(Hide1));
+                    isHideMode = true;
+                    isNeutralMode = false;
+                    isSeekMode = false;
+                    Debug.Log("Hide Mode");
+                    hideGuardMaskIcon.SetActive(true);
+                }
+                else
+                {
+                    audioManager.StopMusic();
+                    audioManager.PlaySFX("RecordScratch");
+                    audioManager.PlayMusic("HideDanceGame02");
+                    StartCoroutine(FlashText(Seek1));
+                    isSeekMode = true;
+                    isNeutralMode = false;
+                    isHideMode = false;
+                    Debug.Log("Seek Mode");
+                    seekJesterMaskIcon.SetActive(true);
+                }
+
+                // Start the flickering animation in Hide or Seek Mode
+                blinkingAnimation1?.StartFlickering();
+                blinkingAnimation2?.StartFlickering();
+
+
+                yield return new WaitForSeconds(phaseDuration);
+
+                // Back to Neutral Mode
+                isNeutralMode = true;
+                isHideMode = false;
+                isSeekMode = false;
+                audioManager.StopMusic();
+                audioManager.PlayMusic("HideDanceGame01");
+                Debug.Log("Back to Neutral Mode");
+                seekJesterMaskIcon.SetActive(false);
+                hideGuardMaskIcon.SetActive(false);
             }
-
-            // Start the flickering animation in Hide or Seek Mode
-            blinkingAnimation1?.StartFlickering();
-            blinkingAnimation2?.StartFlickering();
-
-
-            yield return new WaitForSeconds(phaseDuration);
-
-            // Back to Neutral Mode
-            isNeutralMode = true;
-            isHideMode = false;
-            isSeekMode = false;
-            audioManager.StopMusic();
-            audioManager.PlayMusic("HideDanceGame01");
-            Debug.Log("Back to Neutral Mode");
-            seekJesterMaskIcon.SetActive(false);
-            hideGuardMaskIcon.SetActive(false);
+            
         }
     
 
