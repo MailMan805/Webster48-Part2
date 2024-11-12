@@ -9,10 +9,13 @@ public class MainMenu : MonoBehaviour
 {
     public Button playButton;
     public Button quitButton;
+    public Button creditsButton;
     public Button acceptButton;
     public Button declineButton;
+    public Button credReturnButton;
 
     public GameObject splashScreen;
+    public GameObject creditsScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +25,21 @@ public class MainMenu : MonoBehaviour
 
         if (quitButton != null)
             quitButton.onClick.AddListener(OnQuitButtonClick);
-        
+
+        if (creditsButton != null)
+            creditsButton.onClick.AddListener(OnCreditsButtonClick);
+
         if (acceptButton != null)
             acceptButton.onClick.AddListener(OnAcceptButtonClick);
 
         if (declineButton != null)
             declineButton.onClick.AddListener(OnDeclineButtonClick);
 
+        if (credReturnButton != null)
+            credReturnButton.onClick.AddListener(OnCredReturnButtonClick);
+
         splashScreen.SetActive(false);
+        creditsScreen.SetActive(false);
     }
 
     private void OnPlayButtonClick()
@@ -54,5 +64,17 @@ public class MainMenu : MonoBehaviour
     {
         splashScreen.SetActive(false);
         Debug.Log("no thank u");
+    }    
+    
+    private void OnCreditsButtonClick()
+    {
+        creditsScreen.SetActive(true);
+        Debug.Log("creds");
+    }
+
+    private void OnCredReturnButtonClick()
+    {
+        creditsScreen.SetActive(false);
+        Debug.Log("close creds");
     }
 }
