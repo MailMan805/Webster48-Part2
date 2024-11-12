@@ -49,10 +49,21 @@ public class MainMenu : MonoBehaviour
     }
 
     private void OnAcceptButtonClick()
-    {     
-        SceneManager.LoadScene("Dani B - Map");
+    {
+        gameManager.GameOverGuard = false;
+        gameManager.GameOverJester = false;
+        gameManager.isSeekMode = false;
+        gameManager.isHideMode = false;
+        gameManager.isNeutralMode = true;
+        gameManager.isWon = false;
+        gameManager.timesUp = false;
+        gameManager.Gameloop = true;
+        gameManager.stop = false;
+        gameManager.isJesterChasing = false;
         splashScreen.SetActive(false);
+        SceneManager.LoadScene("Dani B - Map");
         Debug.Log("Play the scene");
+
     }
     private void OnQuitButtonClick()
     {
