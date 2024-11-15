@@ -149443,6 +149443,10 @@ PrefabInstance:
       propertyPath: volumeTrigger
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5922751144649341102, guid: 193cf9f08831bc84d9ef44da21c1acdc, type: 3}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6195036628285796492, guid: 193cf9f08831bc84d9ef44da21c1acdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
