@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private float elapsedTime = 0f;
+    public float elapsedTime = 0f;
     public Text timerText;
+    public int hidecounter = 0;
+    public int seekcounter = 0;
 
     public TextMeshProUGUI distractorText;
     public TextMeshProUGUI lonerText;
@@ -28,12 +30,12 @@ public class GameManager : MonoBehaviour
     public bool stop = false;
     public bool isJesterChasing = false;
 
-    public bool Gameloop = true;
+    public bool Gameloop = false;
 
     public float timeToShowText = 3f;
     public GameObject Hide1;
     public GameObject Seek1;
-    
+
     // Reference to the BlinkingAnimation script
     public BlinkingAnimation blinkingAnimation1;
     public BlinkingAnimation blinkingAnimation2;
@@ -70,9 +72,16 @@ public class GameManager : MonoBehaviour
         seekJesterMaskIcon.SetActive(false);
         hideGuardMaskIcon.SetActive(false);
 
+        Gameloop = false;
+
         StartCoroutine(GameLoop());
 
         elapsedTime = 0f;
+    }
+
+    public void startGameLoop()
+    {
+        StartCoroutine(GameLoop());
     }
 
     private void Update()
@@ -90,26 +99,74 @@ public class GameManager : MonoBehaviour
 
         if (GameOverJester && !stop && isJesterChasing)
         {
+            StopAllCoroutines();
             audioManager.PlaySFX("JesterKill");
             SceneManager.LoadScene("GO Jester");
+            GameOverGuard = false;
+            GameOverJester = false;
+            isSeekMode = false;
+            isHideMode = false;
+            isNeutralMode = true;
+            isWon = false;
+            timesUp = false;
+            Gameloop = false;
             stop = true;
+            isJesterChasing = false;
+            GameWon = false;
+            elapsedTime = 0;
+            Hide1.gameObject.SetActive(false);
+            Seek1.gameObject.SetActive(false);
+            seekJesterMaskIcon.SetActive(false);
+            hideGuardMaskIcon.SetActive(false);
+
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
             Cursor.visible = true;                   // Makes the cursor visible
 
         }
         if (GameOverGuard && !stop)
         {
+            StopAllCoroutines();
             audioManager.PlaySFX("GoreDeatht");
             SceneManager.LoadScene("GO Guard");
+            GameOverGuard = false;
+            GameOverJester = false;
+            isSeekMode = false;
+            isHideMode = false;
+            isNeutralMode = true;
+            isWon = false;
+            timesUp = false;
+            Gameloop = false;
             stop = true;
+            isJesterChasing = false;
+            GameWon = false;
+            elapsedTime = 0;
+            Hide1.gameObject.SetActive(false);
+            Seek1.gameObject.SetActive(false);
+            seekJesterMaskIcon.SetActive(false);
+            hideGuardMaskIcon.SetActive(false);
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
             Cursor.visible = true;                   // Makes the cursor visible
 
         }
         if (isWon && !stop)
         {
+            StopAllCoroutines();
             SceneManager.LoadScene("Tori Win Screen");
+            GameOverGuard = false;
+            GameOverJester = false;
+            isSeekMode = false;
+            isHideMode = false;
+            isNeutralMode = true;
+            isWon = false;
+            timesUp = false;
+            Gameloop = false;
             stop = true;
+            isJesterChasing = false;
+            GameWon = false;
+            Hide1.gameObject.SetActive(false);
+            Seek1.gameObject.SetActive(false);
+            seekJesterMaskIcon.SetActive(false);
+            hideGuardMaskIcon.SetActive(false);
             Cursor.lockState = CursorLockMode.None;  // Unlocks the cursor
             Cursor.visible = true;                   // Makes the cursor visible
 
@@ -120,9 +177,8 @@ public class GameManager : MonoBehaviour
     {
         while (Gameloop)
         {
-            
-                int hidecounter = 0;
-                int seekcounter = 0;
+            Debug.Log("STARTED PLAYING");
+                
                 // Phase 1: Neutral Mode
                 float neutralWaitTime = Random.Range(10f, 15f);
                 isNeutralMode = true;
@@ -142,7 +198,7 @@ public class GameManager : MonoBehaviour
                 if (phaseChoice == 0)
                 {
 
-                    if (hidecounter >= 2)
+                    if (hidecounter <= 2)
                     {
                         phaseChoice = 1;
                         hidecounter = 0;
@@ -152,7 +208,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
 
-                    if (seekcounter >= 2)
+                    if (seekcounter <= 2)
                     {
                         phaseChoice = 0;
                         hidecounter = 0;
@@ -202,17 +258,21 @@ public class GameManager : MonoBehaviour
                 yield return new WaitForSeconds(phaseDuration);
 
                 // Back to Neutral Mode
-                isNeutralMode = true;
-                isHideMode = false;
-                isSeekMode = false;
-                audioManager.StopMusic();
-                audioManager.PlayMusic("HideDanceGame01");
-                Debug.Log("Back to Neutral Mode");
-                seekJesterMaskIcon.SetActive(false);
-                hideGuardMaskIcon.SetActive(false);
+                if(Gameloop)
+                {
+                    isNeutralMode = true;
+                    isHideMode = false;
+                    isSeekMode = false;
+                    audioManager.StopMusic();
+                    audioManager.PlayMusic("HideDanceGame01");
+                    Debug.Log("Back to Neutral Mode");
+                    seekJesterMaskIcon.SetActive(false);
+                    hideGuardMaskIcon.SetActive(false);
+                }
             }
             
         }
+        Debug.Log("stopped PLAYING");
     
 
 

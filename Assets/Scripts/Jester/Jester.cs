@@ -118,7 +118,7 @@ public class Jester : MonoBehaviour
     // Call when player opens a hiding spot
     public void CheckHidingSpot(Transform playerLocation)
     {
-        if (currentHidingSpot != null && Vector3.Distance(playerLocation.position, currentHidingSpot.position) < 5f)
+        if (currentHidingSpot != null && Vector3.Distance(playerLocation.position, currentHidingSpot.position) < 20f)
         {
             found = true;
             

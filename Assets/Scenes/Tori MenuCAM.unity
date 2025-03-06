@@ -38687,6 +38687,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7625741806367452614, guid: c79c6b3704d9bec4a8a6487e3916bce3, type: 3}
+      propertyPath: Gameloop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625741806367452614, guid: c79c6b3704d9bec4a8a6487e3916bce3, type: 3}
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 32978932}
@@ -42651,6 +42655,7 @@ GameObject:
   - component: {fileID: 2007077176}
   - component: {fileID: 2007077175}
   - component: {fileID: 2007077174}
+  - component: {fileID: 2007077177}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -42792,6 +42797,25 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2007077177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007077172}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780f4d3b6abf23a4e938d3d9bf3b7c42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  lookSpeedX: 2
+  lookSpeedY: 2
+  timeToKill: 0
+  Knife: {fileID: 0}
+  KnifeSpeed: 0
+  audioManager: {fileID: 0}
 --- !u!1 &2009702773
 GameObject:
   m_ObjectHideFlags: 0

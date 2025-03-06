@@ -54,6 +54,9 @@ public class MainMenu : MonoBehaviour
         gameManager.Gameloop = true;
         gameManager.stop = false;
         gameManager.isJesterChasing = false;
+        gameManager.GameWon = false;
+        gameManager.elapsedTime = 0;
+        gameManager.startGameLoop();
         splashScreen.SetActive(false);
         SceneManager.LoadScene("Dani B - Map");
         Debug.Log("Play the scene");
