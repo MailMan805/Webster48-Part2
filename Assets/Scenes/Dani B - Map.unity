@@ -79631,7 +79631,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1780819002}
   - {fileID: 669465937}
   - {fileID: 238916161}
   - {fileID: 1308522362}
@@ -123694,11 +123693,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8409711547727194786, guid: 9186c352dda9ce6488a9e043c89738e3, type: 3}
   m_PrefabInstance: {fileID: 1749595544}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1780819002 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-  m_PrefabInstance: {fileID: 1319906062484097974}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1784221817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149320,75 +149314,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147235957}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1319906062484097974
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1154121158}
-    m_Modifications:
-    - target: {fileID: 3804749528032039050, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258366995089696775, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_Name
-      value: Closet
-      objectReference: {fileID: 0}
-    - target: {fileID: 5258366995089696775, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_TagString
-      value: Hiding Spot
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 60.055
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7276744527191338052, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8960712560991346792, guid: d6c842074a7890049a0772dc9101b899, type: 3}
-      propertyPath: playerPosition
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d6c842074a7890049a0772dc9101b899, type: 3}
 --- !u!1001 &3043666343194111835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -149626,6 +149551,10 @@ PrefabInstance:
       propertyPath: blinkingAnimation1
       value: 
       objectReference: {fileID: 1901688551}
+    - target: {fileID: 3105384579099704799, guid: 4c92435ee4efead4ea99b3859a953ace, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5032727089886238959, guid: 4c92435ee4efead4ea99b3859a953ace, type: 3}
       propertyPath: m_LocalPosition.x
       value: 115.34

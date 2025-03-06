@@ -119,6 +119,7 @@ public class FoodCart : MonoBehaviour
 
     private void CheckCart()
     {
+        playerPosition = FindAnyObjectByType<PlayerControls>().transform;
         StartCoroutine(SlideDoorsOpen(false));
 
         jester.CheckHidingSpot(playerPosition);

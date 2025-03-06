@@ -112,6 +112,7 @@ public class Closet : MonoBehaviour
 
     private void CheckCart()
     {
+        playerPosition = FindAnyObjectByType<PlayerControls>().transform;
         print("Test test");
         StartCoroutine(SlideDoorsOpen(false));
         jester.CheckHidingSpot(playerPosition);

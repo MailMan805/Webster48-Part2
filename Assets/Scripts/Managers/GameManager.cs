@@ -198,7 +198,7 @@ public class GameManager : MonoBehaviour
                 if (phaseChoice == 0)
                 {
 
-                    if (hidecounter <= 2)
+                    if (hidecounter > 1)
                     {
                         phaseChoice = 1;
                         hidecounter = 0;
@@ -208,10 +208,10 @@ public class GameManager : MonoBehaviour
                 else
                 {
 
-                    if (seekcounter <= 2)
+                    if (seekcounter > 0)
                     {
                         phaseChoice = 0;
-                        hidecounter = 0;
+                        seekcounter = 0;
                     }
                     seekcounter += 1;
                 }
@@ -246,6 +246,11 @@ public class GameManager : MonoBehaviour
                     isSeekMode = true;
                     isNeutralMode = false;
                     isHideMode = false;
+                    Jester jester = FindObjectOfType<Jester>();
+                    if (jester != null)
+                    {
+                        jester.chaseTimerActivated = false;
+                    }
                     Debug.Log("Seek Mode");
                     seekJesterMaskIcon.SetActive(true);
                 }

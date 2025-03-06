@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Jester : MonoBehaviour
 {
+    public bool chaseTimerActivated = false;
     public float waitTime = 2f;  // Example wait time (2 seconds)
     public GameManager gameManager;
     private NavMeshAgent agent;
@@ -12,7 +13,6 @@ public class Jester : MonoBehaviour
     public float seekRadius = 50f; // Radius to find hiding spots
     private Transform currentHidingSpot;
     public Transform player;
-    private float phaseDuration;
 
     public GameObject TimesUp;
     public float timeToShowText = 3f;
@@ -37,11 +37,12 @@ public class Jester : MonoBehaviour
     void Update()
     {
         blinkingAnimation1?.StopFlickering();
-        phaseDuration = gameManager.phaseDuration;
-        if (gameManager.isSeekMode)
+        if (gameManager.isSeekMode && !chaseTimerActivated)
         {
+            chaseTimerActivated = true;
             StartCoroutine(ChaseTimer());
         }
+
         if (gameManager.isSeekMode && !isChasingPlayer)
         {
             SeekMode();
@@ -121,6 +122,8 @@ public class Jester : MonoBehaviour
         if (currentHidingSpot != null && Vector3.Distance(playerLocation.position, currentHidingSpot.position) < 20f)
         {
             found = true;
+            chaseTimerActivated = false;
+            StopAllCoroutines();
             
             // Player found the Jester
             StartWaiting();
@@ -162,8 +165,10 @@ public class Jester : MonoBehaviour
 
     private IEnumerator ChaseTimer()
     {
-        float chaseTime = phaseDuration;
+        float chaseTime = gameManager.phaseDuration;
+        Debug.Log("PhaseDuration: " + chaseTime);
         yield return new WaitForSeconds(chaseTime);
+        Debug.Log("Ready or not");
         if (!found)
         {
             StartCoroutine(FlashText(TimesUp));
@@ -175,7 +180,8 @@ public class Jester : MonoBehaviour
             jesterAnim.SetBool("IsChasing", true);
             gameManager.isJesterChasing = true;
         }
-        
+        chaseTimerActivated = false;
+
     }
 
     private IEnumerator FlashText(GameObject Text)
